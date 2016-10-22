@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20E2E4C26EDFCE4109645863 /* Pods_DairyNutrition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BAB43CBDE0133D41A98100 /* Pods_DairyNutrition.framework */; };
+		4058B9AD1DBBC46300024143 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4058B9AC1DBBC46300024143 /* Images.xcassets */; };
 		40CCDF391DBBBCFB00D00981 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */; };
 		40CCDF3B1DBBBCFB00D00981 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF3A1DBBBCFB00D00981 /* ViewController.swift */; };
 		40CCDF3E1DBBBCFB00D00981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CCDF3C1DBBBCFB00D00981 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19BAB43CBDE0133D41A98100 /* Pods_DairyNutrition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DairyNutrition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4058B9AC1DBBC46300024143 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		40CCDF351DBBBCFB00D00981 /* DairyNutrition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DairyNutrition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40CCDF3A1DBBBCFB00D00981 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		40CCDF421DBBBCFB00D00981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40CCDF451DBBBCFB00D00981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40CCDF471DBBBCFB00D00981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA1D1685F7FD76F5B3A8F4CD /* Pods-DairyNutrition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DairyNutrition.release.xcconfig"; path = "Pods/Target Support Files/Pods-DairyNutrition/Pods-DairyNutrition.release.xcconfig"; sourceTree = "<group>"; };
+		F26E003AC867CA7D6DCE3C9C /* Pods-DairyNutrition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DairyNutrition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DairyNutrition/Pods-DairyNutrition.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,97 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E2E4C26EDFCE4109645863 /* Pods_DairyNutrition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16294817FA983022FE57BD41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19BAB43CBDE0133D41A98100 /* Pods_DairyNutrition.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		380806689A8BBAD9C2658F72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F26E003AC867CA7D6DCE3C9C /* Pods-DairyNutrition.debug.xcconfig */,
+				AA1D1685F7FD76F5B3A8F4CD /* Pods-DairyNutrition.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		40B745811DBBC081006BABE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40B745821DBBC0AA006BABE4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		40B745831DBBC0C6006BABE4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				40B745861DBBC12B006BABE4 /* View Controllers */,
+				40B745851DBBC0E5006BABE4 /* StoryBoards */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		40B745841DBBC0D2006BABE4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				40B745881DBBC189006BABE4 /* Categories */,
+				40B745871DBBC140006BABE4 /* Utils */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		40B745851DBBC0E5006BABE4 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		40B745861DBBC12B006BABE4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		40B745871DBBC140006BABE4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		40B745881DBBC189006BABE4 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		40CCDF2C1DBBBCFB00D00981 = {
 			isa = PBXGroup;
 			children = (
 				40CCDF371DBBBCFB00D00981 /* DairyNutrition */,
 				40CCDF361DBBBCFB00D00981 /* Products */,
+				380806689A8BBAD9C2658F72 /* Pods */,
+				16294817FA983022FE57BD41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,10 +143,15 @@
 			isa = PBXGroup;
 			children = (
 				40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */,
+				40B745811DBBC081006BABE4 /* Model */,
+				40B745821DBBC0AA006BABE4 /* Network */,
+				40B745831DBBC0C6006BABE4 /* UI */,
+				40B745841DBBC0D2006BABE4 /* Utilities */,
 				40CCDF3A1DBBBCFB00D00981 /* ViewController.swift */,
 				40CCDF3C1DBBBCFB00D00981 /* Main.storyboard */,
-				40CCDF421DBBBCFB00D00981 /* Assets.xcassets */,
 				40CCDF441DBBBCFB00D00981 /* LaunchScreen.storyboard */,
+				40CCDF421DBBBCFB00D00981 /* Assets.xcassets */,
+				4058B9AC1DBBC46300024143 /* Images.xcassets */,
 				40CCDF471DBBBCFB00D00981 /* Info.plist */,
 				40CCDF3F1DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld */,
 			);
@@ -74,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40CCDF4A1DBBBCFB00D00981 /* Build configuration list for PBXNativeTarget "DairyNutrition" */;
 			buildPhases = (
+				923E5657FF8B44BD73EC129C /* [CP] Check Pods Manifest.lock */,
 				40CCDF311DBBBCFB00D00981 /* Sources */,
 				40CCDF321DBBBCFB00D00981 /* Frameworks */,
 				40CCDF331DBBBCFB00D00981 /* Resources */,
+				19E25421D71B2C56B619C7F2 /* [CP] Embed Pods Frameworks */,
+				074B9629E86683FECBEC96FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,12 +222,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				40CCDF461DBBBCFB00D00981 /* LaunchScreen.storyboard in Resources */,
+				4058B9AD1DBBC46300024143 /* Images.xcassets in Resources */,
 				40CCDF431DBBBCFB00D00981 /* Assets.xcassets in Resources */,
 				40CCDF3E1DBBBCFB00D00981 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		074B9629E86683FECBEC96FE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DairyNutrition/Pods-DairyNutrition-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19E25421D71B2C56B619C7F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DairyNutrition/Pods-DairyNutrition-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		923E5657FF8B44BD73EC129C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		40CCDF311DBBBCFB00D00981 /* Sources */ = {
@@ -186,6 +329,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -236,6 +380,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -263,27 +408,37 @@
 		};
 		40CCDF4B1DBBBCFB00D00981 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F26E003AC867CA7D6DCE3C9C /* Pods-DairyNutrition.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = FEB8F3NBZG;
 				INFOPLIST_FILE = DairyNutrition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.osiris.DairyNutrition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		40CCDF4C1DBBBCFB00D00981 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA1D1685F7FD76F5B3A8F4CD /* Pods-DairyNutrition.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = FEB8F3NBZG;
 				INFOPLIST_FILE = DairyNutrition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.osiris.DairyNutrition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -306,6 +461,7 @@
 				40CCDF4C1DBBBCFB00D00981 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
