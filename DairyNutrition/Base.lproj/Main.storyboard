@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="DairyNutrition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,154 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dairy_logo" translatesAutoresizingMaskIntoConstraints="NO" id="8BQ-dT-DM5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="k7W-VF-4gV">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYb-9L-iq3">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="NeH-iK-GVx"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DPH-6I-xRj" customClass="PasswordTextField" customModule="PasswordTextField">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="C4L-a8-BJi"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="showToggleButtonWhile" value="editing"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbb-VK-CGj">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="MaC-9W-fLW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Forgot password">
+                                            <color key="titleColor" red="0.78023236989974976" green="0.77999532222747803" blue="0.80477422475814819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ForgotPasswordButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AqJ-nO-itA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DPH-6I-xRj" secondAttribute="trailing" id="1dM-0h-Deb"/>
+                                    <constraint firstItem="dYb-9L-iq3" firstAttribute="leading" secondItem="k7W-VF-4gV" secondAttribute="leading" id="64X-Np-aSG"/>
+                                    <constraint firstItem="dYb-9L-iq3" firstAttribute="top" secondItem="k7W-VF-4gV" secondAttribute="top" id="QGB-4F-IG6"/>
+                                    <constraint firstAttribute="trailing" secondItem="dYb-9L-iq3" secondAttribute="trailing" id="gxl-pv-hOG"/>
+                                    <constraint firstItem="DPH-6I-xRj" firstAttribute="leading" secondItem="k7W-VF-4gV" secondAttribute="leading" id="hhu-wC-AdB"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1a7-qy-JC6" customClass="IBDesignableButton" customModule="DairyNutrition" customModuleProvider="target">
+                                <color key="backgroundColor" red="1" green="0.21593990921974182" blue="0.38468962907791138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CKR-x6-wSX"/>
+                                </constraints>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="SignInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7YP-ii-AT9"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zL6-bY-0Bi">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1c-ep-2eu" customClass="IBDesignableButton" customModule="DairyNutrition" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="OFO-s2-eka"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="titleEdgeInsets" minX="-17" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="20" minY="7" maxX="111" maxY="7"/>
+                                        <state key="normal" title="Facebook" image="facebook">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="LoginWithFacebookButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oOD-oo-SZs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDn-ew-gYA" customClass="IBDesignableButton" customModule="DairyNutrition" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.8666666666666667" green="0.29411764705882354" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="UGp-PJ-kgE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <inset key="titleEdgeInsets" minX="-39" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="17" minY="7" maxX="99" maxY="7"/>
+                                        <state key="normal" title="Google" image="GooglePlus">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="LoginWithGoogleButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pjc-F8-25v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8St-jn-oJf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zL6-bY-0Bi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="8XU-q3-t0Y"/>
+                            <constraint firstItem="1a7-qy-JC6" firstAttribute="top" secondItem="k7W-VF-4gV" secondAttribute="bottom" constant="59" id="BQT-ha-9uS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zL6-bY-0Bi" secondAttribute="bottom" id="BTE-AK-SXW"/>
+                            <constraint firstItem="k7W-VF-4gV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="18" id="Etg-Mx-JQt"/>
+                            <constraint firstItem="8BQ-dT-DM5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KmB-Dp-m6P"/>
+                            <constraint firstItem="8BQ-dT-DM5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="56" id="MWx-Jt-Paw"/>
+                            <constraint firstItem="1a7-qy-JC6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46" id="RUF-w2-xP8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1a7-qy-JC6" secondAttribute="trailing" constant="46" id="X87-Px-2PV"/>
+                            <constraint firstItem="zL6-bY-0Bi" firstAttribute="top" secondItem="1a7-qy-JC6" secondAttribute="bottom" constant="127" id="XzQ-1g-SZF"/>
+                            <constraint firstAttribute="trailing" secondItem="zL6-bY-0Bi" secondAttribute="trailing" constant="20" id="af6-of-IKN"/>
+                            <constraint firstItem="k7W-VF-4gV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y1S-cW-cJr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="iconTopLayoutConstraint" destination="MWx-Jt-Paw" id="2hu-hd-MM4"/>
+                        <outlet property="keyboardLayoutConstraint" destination="XzQ-1g-SZF" id="oAM-u8-Yld"/>
+                        <outlet property="passwordTextField" destination="DPH-6I-xRj" id="xaq-nw-xr6"/>
+                        <outlet property="signInTopLayoutConstraint" destination="BQT-ha-9uS" id="uk3-wi-G4h"/>
+                        <outlet property="usernameTextField" destination="dYb-9L-iq3" id="3Vx-xB-Lk1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-90.400000000000006" y="196.55172413793105"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GooglePlus" width="66" height="42"/>
+        <image name="dairy_logo" width="120" height="120"/>
+        <image name="facebook" width="48" height="48"/>
+    </resources>
 </document>

@@ -1,12 +1,18 @@
 PODS:
   - Alamofire (4.0.1)
+  - NVActivityIndicatorView (3.0)
+  - PasswordTextField (1.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - NVActivityIndicatorView (~> 3.0)
+  - PasswordTextField (~> 1.0)
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
+  PasswordTextField: 1fccb24dd769cfc963f1f60cb9fece692ad40530
 
-PODFILE CHECKSUM: 19e724ec1abf7bba5540fb5c6459cc4449fef902
+PODFILE CHECKSUM: 7c332e2345cb690020ab9e67adff6a4a43955c9a
 
 COCOAPODS: 1.1.1
