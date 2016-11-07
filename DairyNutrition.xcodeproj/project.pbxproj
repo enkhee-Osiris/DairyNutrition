@@ -37,11 +37,12 @@
 		4077B1AE1DC6E5710074EB3B /* IBDesignable+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077B1AD1DC6E5710074EB3B /* IBDesignable+Button.swift */; };
 		40984AD81DC4A15100BA7D6B /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40984AD71DC4A15100BA7D6B /* UIView+IBInspectable.swift */; };
 		40CCDF391DBBBCFB00D00981 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */; };
-		40CCDF3B1DBBBCFB00D00981 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF3A1DBBBCFB00D00981 /* ViewController.swift */; };
 		40CCDF3E1DBBBCFB00D00981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CCDF3C1DBBBCFB00D00981 /* Main.storyboard */; };
 		40CCDF411DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF3F1DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld */; };
 		40CCDF461DBBBCFB00D00981 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CCDF441DBBBCFB00D00981 /* LaunchScreen.storyboard */; };
 		40D55EFF1DBDA88400FA033C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D55EFE1DBDA88400FA033C /* Assets.xcassets */; };
+		40F6932B1DCF6F4200A4D75B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */; };
+		40F6932F1DCF79FC00A4D75B /* moments.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40F6932E1DCF79FC00A4D75B /* moments.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,12 +77,13 @@
 		40984AD71DC4A15100BA7D6B /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		40CCDF351DBBBCFB00D00981 /* DairyNutrition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DairyNutrition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		40CCDF3A1DBBBCFB00D00981 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40CCDF3D1DBBBCFB00D00981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40CCDF401DBBBCFB00D00981 /* DairyNutrition.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DairyNutrition.xcdatamodel; sourceTree = "<group>"; };
 		40CCDF451DBBBCFB00D00981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40CCDF471DBBBCFB00D00981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40D55EFE1DBDA88400FA033C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		40F6932E1DCF79FC00A4D75B /* moments.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = moments.mp4; sourceTree = "<group>"; };
 		AA1D1685F7FD76F5B3A8F4CD /* Pods-DairyNutrition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DairyNutrition.release.xcconfig"; path = "Pods/Target Support Files/Pods-DairyNutrition/Pods-DairyNutrition.release.xcconfig"; sourceTree = "<group>"; };
 		F26E003AC867CA7D6DCE3C9C /* Pods-DairyNutrition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DairyNutrition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DairyNutrition/Pods-DairyNutrition.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				405B81AC1DC23DFF00E761BC /* MainViewController.swift */,
+				40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */,
 				405B81AE1DC23E2B00E761BC /* LoginViewController */,
 			);
 			path = "View Controllers";
@@ -230,13 +233,13 @@
 		40CCDF371DBBBCFB00D00981 /* DairyNutrition */ = {
 			isa = PBXGroup;
 			children = (
+				40F6932E1DCF79FC00A4D75B /* moments.mp4 */,
 				40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */,
 				4097A6951DBF42920092E8C8 /* Constants */,
 				40B745811DBBC081006BABE4 /* Model */,
 				40B745821DBBC0AA006BABE4 /* Network */,
 				40B745831DBBC0C6006BABE4 /* UI */,
 				40613A4A1DBF3FB500CCB125 /* Extensions */,
-				40CCDF3A1DBBBCFB00D00981 /* ViewController.swift */,
 				40CCDF3C1DBBBCFB00D00981 /* Main.storyboard */,
 				40CCDF441DBBBCFB00D00981 /* LaunchScreen.storyboard */,
 				40D55EFE1DBDA88400FA033C /* Assets.xcassets */,
@@ -313,6 +316,7 @@
 				40CCDF461DBBBCFB00D00981 /* LaunchScreen.storyboard in Resources */,
 				4058B9AD1DBBC46300024143 /* Images.xcassets in Resources */,
 				40D55EFF1DBDA88400FA033C /* Assets.xcassets in Resources */,
+				40F6932F1DCF79FC00A4D75B /* moments.mp4 in Resources */,
 				40CCDF3E1DBBBCFB00D00981 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,10 +381,10 @@
 				405B818A1DC2295000E761BC /* UIColorExtensions.swift in Sources */,
 				405B81AD1DC23DFF00E761BC /* MainViewController.swift in Sources */,
 				405B81A41DC22D1100E761BC /* BlockLongPress.swift in Sources */,
-				40CCDF3B1DBBBCFB00D00981 /* ViewController.swift in Sources */,
 				405B81991DC22BD800E761BC /* CGFloatExtensions.swift in Sources */,
 				405B81901DC229A900E761BC /* UIStoryBoardExtensions.swift in Sources */,
 				405B81921DC229C200E761BC /* UIViewControllerExtensions.swift in Sources */,
+				40F6932B1DCF6F4200A4D75B /* WelcomeViewController.swift in Sources */,
 				405B81A91DC22D1100E761BC /* EZSwiftFunctions.swift in Sources */,
 				405B81A31DC22D1100E761BC /* BlockButton.swift in Sources */,
 				405B81841DC228F400E761BC /* NSUserDefaultsExtension.swift in Sources */,
@@ -539,7 +543,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.osiris.DairyNutrition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -560,7 +564,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.osiris.DairyNutrition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

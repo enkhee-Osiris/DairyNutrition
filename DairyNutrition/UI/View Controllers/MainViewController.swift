@@ -13,19 +13,14 @@ class MainViewController : UIViewController, NVActivityIndicatorViewable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        super.hideKeyboardWhenTappedAround()
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // Custom Functions
     
+    // MARK: Loading
     func showLoading(text: String? = "Loading...") {
         
         //size of loading
@@ -38,6 +33,7 @@ class MainViewController : UIViewController, NVActivityIndicatorViewable {
         stopAnimating()
     }
     
+    // MARK: Alert
     func showAlert(title: String, text: String, buttons: NSArray? = nil) {
         
         // Example of element in buttons

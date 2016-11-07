@@ -11,10 +11,7 @@ import PasswordTextField
 
 class LoginViewController : MainViewController {
     
-    @IBOutlet var keyboardLayoutConstraint: NSLayoutConstraint!
-    @IBOutlet var iconTopLayoutConstraint: NSLayoutConstraint!
-    @IBOutlet var signInTopLayoutConstraint: NSLayoutConstraint!
-    
+    @IBOutlet var signInButton: IBDesignableButton!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: PasswordTextField!
     
@@ -26,47 +23,52 @@ class LoginViewController : MainViewController {
         // Hides keyboard when Tapped Arround
         super.hideKeyboardWhenTappedAround()
         
-        //keyboard Animation
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.animateWithKeyboard(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
-        super.addNotificationObserver(NSNotification.Name.UIKeyboardWillChangeFrame.rawValue, selector: #selector(self.animateWithKeyboard(notification:)))
+        //super.addNotificationObserver(NSNotification.Name.UIKeyboardWillChangeFrame.rawValue, selector: #selector(self.animateWithKeyboard(notification:)))
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+//    deinit {
+//        NotificationCenter.default.removeObserver(self)
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()    }
 
-    func animateWithKeyboard(notification: NSNotification) {
-        if let userInfo = notification.userInfo {
-            
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
-            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
-            
-            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
-                self.keyboardLayoutConstraint?.constant = 127.0
-                self.iconTopLayoutConstraint?.constant = 56.0
-                self.signInTopLayoutConstraint?.constant = 59.0
-            } else {
-                self.keyboardLayoutConstraint?.constant = endFrame?.size.height ??  127.0
-                
-                self.iconTopLayoutConstraint?.constant = 26.0
-                self.signInTopLayoutConstraint?.constant = 39.0
-            }
-           UIView.animate(withDuration: duration,
-                           delay: TimeInterval(0),
-                           options: animationCurve,
-                           animations: { self.view.layoutIfNeeded() },
-                           completion: nil)
-        }
+//    func animateWithKeyboard(notification: NSNotification) {
+//        if let userInfo = notification.userInfo {
+//            
+//            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+//            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+//            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+//            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+//            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+//            
+//            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
+//                self.keyboardLayoutConstraint?.constant = 127.0
+//                self.iconTopLayoutConstraint?.constant = 56.0
+//                self.signInTopLayoutConstraint?.constant = 59.0
+//            } else {
+//                self.keyboardLayoutConstraint?.constant = endFrame?.size.height ??  127.0
+//                
+//                self.iconTopLayoutConstraint?.constant = 26.0
+//                self.signInTopLayoutConstraint?.constant = 39.0
+//            }
+//           UIView.animate(withDuration: duration,
+//                           delay: TimeInterval(0),
+//                           options: animationCurve,
+//                           animations: { self.view.layoutIfNeeded() },
+//                           completion: nil)
+//        }
+//    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func BackButtonTapped(_ sender: UIButton) {
+        dismissVC(completion: nil)
     }
     
-    @IBAction func SignInButtonTapped(_ sender: UIButton) {
+    
+    @IBAction func LoginButtonTapped(_ sender: UIButton) {
 
         
         // Loading Test
