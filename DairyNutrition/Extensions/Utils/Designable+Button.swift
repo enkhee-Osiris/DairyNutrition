@@ -10,7 +10,7 @@ import UIKit
 
 private let ButtonPadding: CGFloat = 50
 
-@IBDesignable class IBDesignableButton: UIButton {
+@IBDesignable class DesignableButton: UIButton {
     
     override var intrinsicContentSize: CGSize {
         let size = super.intrinsicContentSize

@@ -56,4 +56,8 @@ class MainViewController : UIViewController, NVActivityIndicatorViewable {
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func getValue() {
+    
+    }
 }

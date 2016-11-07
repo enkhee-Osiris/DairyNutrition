@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		20E2E4C26EDFCE4109645863 /* Pods_DairyNutrition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BAB43CBDE0133D41A98100 /* Pods_DairyNutrition.framework */; };
 		4058B9AD1DBBC46300024143 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4058B9AC1DBBC46300024143 /* Images.xcassets */; };
+		405965B41DD0ACE100EB5F19 /* SignUpSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405965B31DD0ACE100EB5F19 /* SignUpSecondViewController.swift */; };
+		405965B61DD0ACF100EB5F19 /* SignUpThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405965B51DD0ACF100EB5F19 /* SignUpThirdViewController.swift */; };
+		405965B81DD0AD1500EB5F19 /* SignUpFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405965B71DD0AD1500EB5F19 /* SignUpFourthViewController.swift */; };
+		405965BA1DD0AD2600EB5F19 /* SignUpFifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405965B91DD0AD2600EB5F19 /* SignUpFifthViewController.swift */; };
+		405965BC1DD0AD3200EB5F19 /* SignUpSixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405965BB1DD0AD3200EB5F19 /* SignUpSixthViewController.swift */; };
+		405965BF1DD0AD4B00EB5F19 /* SignUpSeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405965BE1DD0AD4B00EB5F19 /* SignUpSeventhViewController.swift */; };
+		405965C31DD0CB9D00EB5F19 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405965C21DD0CB9D00EB5F19 /* RadioButton.swift */; };
 		405B81801DC2288200E761BC /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405B817F1DC2288200E761BC /* DictionaryExtensions.swift */; };
 		405B81821DC228D500E761BC /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405B81811DC228D500E761BC /* StringExtensions.swift */; };
 		405B81841DC228F400E761BC /* NSUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405B81831DC228F400E761BC /* NSUserDefaultsExtension.swift */; };
@@ -34,7 +41,7 @@
 		405B81AD1DC23DFF00E761BC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405B81AC1DC23DFF00E761BC /* MainViewController.swift */; };
 		405B81B01DC23E5300E761BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405B81AF1DC23E5300E761BC /* LoginViewController.swift */; };
 		4067BC371DC3A86A007F9CF9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067BC361DC3A86A007F9CF9 /* Constants.swift */; };
-		4077B1AE1DC6E5710074EB3B /* IBDesignable+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077B1AD1DC6E5710074EB3B /* IBDesignable+Button.swift */; };
+		4077B1AE1DC6E5710074EB3B /* Designable+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077B1AD1DC6E5710074EB3B /* Designable+Button.swift */; };
 		40984AD81DC4A15100BA7D6B /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40984AD71DC4A15100BA7D6B /* UIView+IBInspectable.swift */; };
 		40CCDF391DBBBCFB00D00981 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */; };
 		40CCDF3E1DBBBCFB00D00981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CCDF3C1DBBBCFB00D00981 /* Main.storyboard */; };
@@ -43,11 +50,21 @@
 		40D55EFF1DBDA88400FA033C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D55EFE1DBDA88400FA033C /* Assets.xcassets */; };
 		40F6932B1DCF6F4200A4D75B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */; };
 		40F6932F1DCF79FC00A4D75B /* moments.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40F6932E1DCF79FC00A4D75B /* moments.mp4 */; };
+		40FD9C741DD022BA00436D5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD9C731DD022BA00436D5D /* SignUpViewController.swift */; };
+		40FD9C761DD022CE00436D5D /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD9C751DD022CE00436D5D /* SignUpPageViewController.swift */; };
+		40FD9C781DD0387900436D5D /* SignUpFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD9C771DD0387900436D5D /* SignUpFirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19BAB43CBDE0133D41A98100 /* Pods_DairyNutrition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DairyNutrition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4058B9AC1DBBC46300024143 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		405965B31DD0ACE100EB5F19 /* SignUpSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSecondViewController.swift; sourceTree = "<group>"; };
+		405965B51DD0ACF100EB5F19 /* SignUpThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpThirdViewController.swift; sourceTree = "<group>"; };
+		405965B71DD0AD1500EB5F19 /* SignUpFourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFourthViewController.swift; sourceTree = "<group>"; };
+		405965B91DD0AD2600EB5F19 /* SignUpFifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFifthViewController.swift; sourceTree = "<group>"; };
+		405965BB1DD0AD3200EB5F19 /* SignUpSixthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSixthViewController.swift; sourceTree = "<group>"; };
+		405965BE1DD0AD4B00EB5F19 /* SignUpSeventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSeventhViewController.swift; sourceTree = "<group>"; };
+		405965C21DD0CB9D00EB5F19 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		405B817F1DC2288200E761BC /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		405B81811DC228D500E761BC /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		405B81831DC228F400E761BC /* NSUserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsExtension.swift; sourceTree = "<group>"; };
@@ -73,7 +90,7 @@
 		405B81AC1DC23DFF00E761BC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		405B81AF1DC23E5300E761BC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4067BC361DC3A86A007F9CF9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		4077B1AD1DC6E5710074EB3B /* IBDesignable+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IBDesignable+Button.swift"; sourceTree = "<group>"; };
+		4077B1AD1DC6E5710074EB3B /* Designable+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Designable+Button.swift"; sourceTree = "<group>"; };
 		40984AD71DC4A15100BA7D6B /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		40CCDF351DBBBCFB00D00981 /* DairyNutrition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DairyNutrition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +101,9 @@
 		40D55EFE1DBDA88400FA033C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		40F6932E1DCF79FC00A4D75B /* moments.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = moments.mp4; sourceTree = "<group>"; };
+		40FD9C731DD022BA00436D5D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		40FD9C751DD022CE00436D5D /* SignUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
+		40FD9C771DD0387900436D5D /* SignUpFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFirstViewController.swift; sourceTree = "<group>"; };
 		AA1D1685F7FD76F5B3A8F4CD /* Pods-DairyNutrition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DairyNutrition.release.xcconfig"; path = "Pods/Target Support Files/Pods-DairyNutrition/Pods-DairyNutrition.release.xcconfig"; sourceTree = "<group>"; };
 		F26E003AC867CA7D6DCE3C9C /* Pods-DairyNutrition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DairyNutrition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DairyNutrition/Pods-DairyNutrition.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,7 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				40984AD71DC4A15100BA7D6B /* UIView+IBInspectable.swift */,
-				4077B1AD1DC6E5710074EB3B /* IBDesignable+Button.swift */,
+				4077B1AD1DC6E5710074EB3B /* Designable+Button.swift */,
+				405965C21DD0CB9D00EB5F19 /* RadioButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -208,6 +229,7 @@
 				405B81AC1DC23DFF00E761BC /* MainViewController.swift */,
 				40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */,
 				405B81AE1DC23E2B00E761BC /* LoginViewController */,
+				40FD9C721DD0227300436D5D /* SignUpViewController */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -250,6 +272,22 @@
 			path = DairyNutrition;
 			sourceTree = "<group>";
 		};
+		40FD9C721DD0227300436D5D /* SignUpViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40FD9C731DD022BA00436D5D /* SignUpViewController.swift */,
+				40FD9C751DD022CE00436D5D /* SignUpPageViewController.swift */,
+				40FD9C771DD0387900436D5D /* SignUpFirstViewController.swift */,
+				405965B31DD0ACE100EB5F19 /* SignUpSecondViewController.swift */,
+				405965B51DD0ACF100EB5F19 /* SignUpThirdViewController.swift */,
+				405965B71DD0AD1500EB5F19 /* SignUpFourthViewController.swift */,
+				405965B91DD0AD2600EB5F19 /* SignUpFifthViewController.swift */,
+				405965BB1DD0AD3200EB5F19 /* SignUpSixthViewController.swift */,
+				405965BE1DD0AD4B00EB5F19 /* SignUpSeventhViewController.swift */,
+			);
+			path = SignUpViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,7 +318,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Osiris;
 				TargetAttributes = {
 					40CCDF341DBBBCFB00D00981 = {
@@ -377,21 +415,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				405B81B01DC23E5300E761BC /* LoginViewController.swift in Sources */,
+				405965C31DD0CB9D00EB5F19 /* RadioButton.swift in Sources */,
 				40984AD81DC4A15100BA7D6B /* UIView+IBInspectable.swift in Sources */,
 				405B818A1DC2295000E761BC /* UIColorExtensions.swift in Sources */,
 				405B81AD1DC23DFF00E761BC /* MainViewController.swift in Sources */,
+				405965B81DD0AD1500EB5F19 /* SignUpFourthViewController.swift in Sources */,
 				405B81A41DC22D1100E761BC /* BlockLongPress.swift in Sources */,
 				405B81991DC22BD800E761BC /* CGFloatExtensions.swift in Sources */,
+				405965B41DD0ACE100EB5F19 /* SignUpSecondViewController.swift in Sources */,
 				405B81901DC229A900E761BC /* UIStoryBoardExtensions.swift in Sources */,
 				405B81921DC229C200E761BC /* UIViewControllerExtensions.swift in Sources */,
 				40F6932B1DCF6F4200A4D75B /* WelcomeViewController.swift in Sources */,
+				405965BF1DD0AD4B00EB5F19 /* SignUpSeventhViewController.swift in Sources */,
 				405B81A91DC22D1100E761BC /* EZSwiftFunctions.swift in Sources */,
+				405965B61DD0ACF100EB5F19 /* SignUpThirdViewController.swift in Sources */,
 				405B81A31DC22D1100E761BC /* BlockButton.swift in Sources */,
+				40FD9C761DD022CE00436D5D /* SignUpPageViewController.swift in Sources */,
+				405965BC1DD0AD3200EB5F19 /* SignUpSixthViewController.swift in Sources */,
 				405B81841DC228F400E761BC /* NSUserDefaultsExtension.swift in Sources */,
+				40FD9C781DD0387900436D5D /* SignUpFirstViewController.swift in Sources */,
 				4067BC371DC3A86A007F9CF9 /* Constants.swift in Sources */,
 				405B81881DC2293400E761BC /* UIAlertControllerExtensions.swift in Sources */,
 				40CCDF411DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld in Sources */,
 				405B81961DC22BC700E761BC /* CGRectExtensions.swift in Sources */,
+				405965BA1DD0AD2600EB5F19 /* SignUpFifthViewController.swift in Sources */,
+				40FD9C741DD022BA00436D5D /* SignUpViewController.swift in Sources */,
 				405B81861DC2291300E761BC /* NSDictionaryExtensions.swift in Sources */,
 				405B81941DC22ABD00E761BC /* UIViewExtensions.swift in Sources */,
 				405B81A61DC22D1100E761BC /* BlockPinch.swift in Sources */,
@@ -400,7 +448,7 @@
 				405B81821DC228D500E761BC /* StringExtensions.swift in Sources */,
 				405B81A81DC22D1100E761BC /* BlockTap.swift in Sources */,
 				405B81A51DC22D1100E761BC /* BlockPan.swift in Sources */,
-				4077B1AE1DC6E5710074EB3B /* IBDesignable+Button.swift in Sources */,
+				4077B1AE1DC6E5710074EB3B /* Designable+Button.swift in Sources */,
 				405B818C1DC2297300E761BC /* UIImageExtensions.swift in Sources */,
 				40CCDF391DBBBCFB00D00981 /* AppDelegate.swift in Sources */,
 				405B818E1DC2298500E761BC /* UIImageViewExtensions.swift in Sources */,

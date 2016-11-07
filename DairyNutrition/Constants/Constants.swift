@@ -10,4 +10,5 @@ import Foundation
 import UIKit
 
 // Constants are here
-let primaryColor = UIColor(hexString: "#FF1A50")
+let pinkColor = UIColor(hexString: "#FF1A50")
+let grayColor = UIColor(hexString: "#C7C7CD")
