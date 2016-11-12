@@ -10,36 +10,39 @@ import UIKit
 
 class SignUpViewController : MainViewController {
     
+    // MARK: Properties
+    
     @IBOutlet weak var containerView: UIView!
+    
     @IBOutlet weak var pageControl: UIPageControl!
+    
     @IBOutlet weak var nextButton: UIButton!
+    
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var backButton: UIButton!
     
     var textsOfLabel = [
-        "What is your goal",
+        "Таны зорилго юу вэ?",
         "How much weight would you like to gain?",
         "What is your gender?",
         "What is your activity level?",
         "What is your current weight?",
         "What is your height?",
-        "What is your date of birth?"]
+        "What is your date of birth?"
+    ]
     
     var signUpPageViewController: SignUpPageViewController? {
         didSet {
             signUpPageViewController?.signUpDelegate = self
         }
     }
+    
+    // MARK: View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageControl.addTarget(self, action: #selector(SignUpViewController.didChangePageControlValue), for: .valueChanged)
         
         super.addNotificationObserver(Notification.Name.signInNextButtonWillEnable.rawValue, selector: #selector(self.enableNextButton))
-        
-        self.setupTextOfLabel()
-        
-        // Setup back button
-        // backButton.contentEdgeInsets = UIEdgeInsetsMake(15, 15, 15, 15)
+        super.addNotificationObserver(Notification.Name.signInNextButtonWillDisable.rawValue, selector: #selector(self.disableNextButton))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,58 +51,53 @@ class SignUpViewController : MainViewController {
         }
     }
     
-    func setupTextOfLabel() {
-        if pageControl.numberOfPages == 7 {
-            questionLabel.text = textsOfLabel[pageControl.currentPage]
-        }
-        else {
-            textsOfLabel.remove(at: 1)
-            questionLabel.text = textsOfLabel[pageControl.currentPage]
-        }
+    // MARK: Utilities
+    
+    public func setupTextOfLabel() {
+        self.questionLabel.text = textsOfLabel[pageControl.currentPage]
     }
     
-    /**
-     Will enable nextButton
-    */
+    // Will enable nextButton
     func enableNextButton() {
-        nextButton.isEnabled = true
-    //    if let currentViewController = signUpPageViewController?.getViewController(index: pageControl.currentPage) as? SignUpFirstViewController{
-    //        // create the alert
-    //        let alert = UIAlertController(title: "My Demo", message: currentViewController.getTextFieldValue(), preferredStyle: UIAlertControllerStyle.alert)
-    //        
-    //        // add an action (button)
-    //        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-    //        
-    //        // show the alert
-    //        self.present(alert, animated: true, completion: nil)
-    //    }
+        self.nextButton.isEnabled = true
     }
     
-    /**
-     Fired when the user taps on the pageControl to change its current page.
-     */
-    func didChangePageControlValue() {
-        signUpPageViewController?.scrollToViewController(index: pageControl.currentPage)
+    // Will disable nextButton
+    func disableNextButton() {
+        self.nextButton.isEnabled = false
     }
+
     
     // MARK: IBActions
+    
     @IBAction func NextButtonTapped(_ sender: UIButton) {
-        //signUpPageViewController?.showAlertText()
         signUpPageViewController?.scrollToNextViewController()
         nextButton.isEnabled = false
+        if let lastVC = signUpPageViewController?.getViewController(index: pageControl.currentPage) as? SignUpSeventhViewController {
+            
+            super.presentVC((UIStoryboard.mainStoryboard?.instantiateVC(SignUpWithUserInfoViewController.self))!)
+            
+            let dateformatter = DateFormatter()
+
+            dateformatter.dateFormat = "MM/dd/yy"
+
+            let now = dateformatter.string(from: lastVC.dateOfBirth!)
+//
+//            super.showAlert(title: "Date", text: now)
+        }
     }
+    
     @IBAction func BackButtonTapped(_ sender: UIButton) {
         if (signUpPageViewController?.getViewController(index: pageControl.currentPage) as? SignUpFirstViewController) != nil{
             super.dismissVC(completion: nil)
         } else {
-            //signUpPageViewController?.showAlertText()
             signUpPageViewController?.scrollToBeforeViewController()
-            nextButton.isEnabled = true
+            self.nextButton.isEnabled = true
         }
     }
-    
 }
 
+// MARK: Extensions
 extension SignUpViewController: SignUpPageViewControllerDelegate {
     
     func signUpPageViewController(_ signUpPageViewController: SignUpPageViewController, didUpdatePageCount count: Int) {
@@ -108,10 +106,6 @@ extension SignUpViewController: SignUpPageViewControllerDelegate {
     
     func signUpPageViewController(_ signUpPageViewController: SignUpPageViewController, didUpdatePageIndex index: Int) {
         pageControl.currentPage = index
+        self.setupTextOfLabel()
     }
-    
-}
-
-extension Notification.Name {
-    static let signInNextButtonWillEnable = Notification.Name("signInNextButtonWillEnable")
 }

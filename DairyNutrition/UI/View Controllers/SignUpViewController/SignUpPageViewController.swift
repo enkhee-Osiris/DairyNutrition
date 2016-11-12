@@ -9,7 +9,8 @@
 import UIKit
 
 class SignUpPageViewController : UIPageViewController {
-
+    
+    // MARK: Properties
     weak var signUpDelegate : SignUpPageViewControllerDelegate?
     
     fileprivate(set) lazy var orderedViewControllers: [UIViewController] = {
@@ -23,10 +24,11 @@ class SignUpPageViewController : UIPageViewController {
             self.newSubViewController("Seventh")]
     }()
     
+    // MARK: View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //dataSource = self
         delegate = self
         
         if let initialViewController = orderedViewControllers.first {
@@ -36,13 +38,14 @@ class SignUpPageViewController : UIPageViewController {
         signUpDelegate?.signUpPageViewController(self, didUpdatePageCount: orderedViewControllers.count)
     }
     
+    // MARK: Utilities
+    
     func getViewController(index: Int) -> UIViewController {
         return orderedViewControllers[index]
     }
     
-    /**
-     Scrolls to the next view controller.
-     */
+    
+    // Scrolls to the next view controller
     func scrollToNextViewController() {
         if let visibleViewController = viewControllers?.first,
             let nextViewController = pageViewController(self, viewControllerAfter: visibleViewController) {
@@ -50,9 +53,7 @@ class SignUpPageViewController : UIPageViewController {
         }
     }
     
-    /**
-     Scrolls to the previous view controller.
-    */
+   // Scrolls to the previous view controller
     func scrollToBeforeViewController() {
         if let visibleViewController = viewControllers?.first,
             let beforeViewController = pageViewController(self, viewControllerBefore: visibleViewController) {
@@ -85,8 +86,7 @@ class SignUpPageViewController : UIPageViewController {
      
      - parameter viewController: the view controller to show.
      */
-    fileprivate func scrollToViewController(_ viewController: UIViewController,
-                                            direction: UIPageViewControllerNavigationDirection = .forward) {
+    fileprivate func scrollToViewController(_ viewController: UIViewController, direction: UIPageViewControllerNavigationDirection = .forward) {
         setViewControllers([viewController],
                            direction: direction,
                            animated: true,
@@ -98,9 +98,8 @@ class SignUpPageViewController : UIPageViewController {
         })
     }
     
-    /**
-     Notifies '_tutorialDelegate' that the current page index was updated.
-     */
+    
+    // Notifies '_tutorialDelegate' that the current page index was updated.
     fileprivate func notifyTutorialDelegateOfNewIndex() {
         if let firstViewController = viewControllers?.first,
         let index = orderedViewControllers.index(of: firstViewController) {
@@ -125,10 +124,10 @@ class SignUpPageViewController : UIPageViewController {
 
 
 // MARK: UIPageViewControllerDataSource
+
 extension SignUpPageViewController: UIPageViewControllerDataSource {
     
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
         }
@@ -138,7 +137,7 @@ extension SignUpPageViewController: UIPageViewControllerDataSource {
         // User is on the first view controller and swiped left to loop to
         // the last view controller.
         guard previousIndex >= 0 else {
-            return orderedViewControllers.last
+            return nil
         }
         
         guard orderedViewControllers.count > previousIndex else {
@@ -148,8 +147,7 @@ extension SignUpPageViewController: UIPageViewControllerDataSource {
         return orderedViewControllers[previousIndex]
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
         }
@@ -160,7 +158,7 @@ extension SignUpPageViewController: UIPageViewControllerDataSource {
         // User is on the last view controller and swiped right to loop to
         // the first view controller.
         guard orderedViewControllersCount != nextIndex else {
-            return orderedViewControllers.first
+            return nil
         }
         
         guard orderedViewControllersCount > nextIndex else {
@@ -169,20 +167,20 @@ extension SignUpPageViewController: UIPageViewControllerDataSource {
         
         return orderedViewControllers[nextIndex]
     }
-    
 }
 
 // MARK: UIPageViewControllerDelegate
+
 extension SignUpPageViewController: UIPageViewControllerDelegate {
-    
     func pageViewController(_ pageViewController: UIPageViewController,
         didFinishAnimating finished: Bool,
         previousViewControllers: [UIViewController],
         transitionCompleted completed: Bool) {
         notifyTutorialDelegateOfNewIndex()
     }
-    
 }
+
+// MARK: Protocol
 
 protocol SignUpPageViewControllerDelegate: class {
     
@@ -201,5 +199,4 @@ protocol SignUpPageViewControllerDelegate: class {
      - parameter index: the index of the currently visible page.
      */
     func signUpPageViewController(_ signUpPageViewController: SignUpPageViewController, didUpdatePageIndex index: Int)
-    
 }

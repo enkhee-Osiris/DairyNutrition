@@ -10,28 +10,37 @@ import UIKit
 
 @IBDesignable
 class RadioButton: UIButton {
+    
+    // MARK: Properties
+    
     var alternateButton:Array<RadioButton>?
+    
+    // MARK: View Life Cycle
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         self.setTitleColor(pinkColor, for: .selected)
+        //self.setTitleColor(pinkColor, for: .highlighted)
         self.setTitleColor(grayColor, for: .normal)
         self.layer.cornerRadius = 5.0
         self.layer.borderWidth = 2.0
         self.backgroundColor = UIColor.white
         self.layer.masksToBounds = true
+        self.tintColor = UIColor.white
         
     }
+    
+    // MARK: Touch Gesture
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.unselectAlternateButtons()
         super.touchesBegan(touches, with: event)
     }
     
-    /**
-     Will unselect alternative buttons
-     */
+    // MARK: Utilities
+    
+    // Will unselect alternative buttons
     func unselectAlternateButtons(){
         if alternateButton != nil {
             self.isSelected = true
@@ -48,6 +57,18 @@ class RadioButton: UIButton {
         self.isSelected = !isSelected
     }
     
+    func getSelectedButton() -> RadioButton? {
+        if self.isSelected == false{
+            if alternateButton != nil {
+                for aButton:RadioButton in alternateButton! {
+                    return (aButton.isSelected ? aButton : nil)!
+                }
+            }
+            return nil
+        }
+        return self
+    }
+    
     override var isSelected: Bool {
         didSet {
             if isSelected {
@@ -58,4 +79,8 @@ class RadioButton: UIButton {
         }
     }
 
+    // Disables highlighting
+    override var isHighlighted: Bool {
+        didSet { if isHighlighted { isHighlighted = false } }
+    }
 }

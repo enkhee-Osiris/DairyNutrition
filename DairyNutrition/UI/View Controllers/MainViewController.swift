@@ -11,6 +11,8 @@ import NVActivityIndicatorView
 
 class MainViewController : UIViewController, NVActivityIndicatorViewable {
     
+    // MARK: View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,21 +21,20 @@ class MainViewController : UIViewController, NVActivityIndicatorViewable {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: Utilites
     
-    // MARK: Loading
     func showLoading(text: String? = "Loading...") {
         
         //size of loading
         let size = CGSize(width: 30, height: 30)
         
-        startAnimating(size, message: text, type: NVActivityIndicatorType.ballGridPulse)
+        self.startAnimating(size, message: text, type: NVActivityIndicatorType.ballGridPulse)
     }
     
     func stopLoading() {
         stopAnimating()
     }
-    
-    // MARK: Alert
+
     func showAlert(title: String, text: String, buttons: NSArray? = nil) {
         
         // Example of element in buttons
@@ -47,17 +48,17 @@ class MainViewController : UIViewController, NVActivityIndicatorViewable {
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         } else {
         
-            // add the button actions
+            // Adding the button actions
             for button in buttons! {
                 alert.addAction(button as! UIAlertAction)
             }
         }
         
-        // show the alert
+        // Shows the alert
         self.present(alert, animated: true, completion: nil)
     }
     
     func getValue() {
-    
+        
     }
 }

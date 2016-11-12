@@ -10,22 +10,25 @@ import UIKit
 
 class SignUpFirstViewController: MainViewController {
     
+    // MARK: Properties
+    
     @IBOutlet weak var weightGainRadioButton: RadioButton!
     @IBOutlet weak var maintainWeightRadioButton: RadioButton!
     @IBOutlet weak var loseWeightRadioButton: RadioButton!
     
+    // MARK: View life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // setting radio buttons as alternate
+        self.weightGainRadioButton?.alternateButton = [maintainWeightRadioButton, loseWeightRadioButton]
+        self.maintainWeightRadioButton?.alternateButton = [weightGainRadioButton, loseWeightRadioButton]
+        self.loseWeightRadioButton?.alternateButton = [weightGainRadioButton, maintainWeightRadioButton]
         
-        //setting radia buttons as alternate
-        weightGainRadioButton?.alternateButton = [maintainWeightRadioButton, maintainWeightRadioButton]
-        maintainWeightRadioButton?.alternateButton = [weightGainRadioButton, loseWeightRadioButton]
-        loseWeightRadioButton?.alternateButton = [weightGainRadioButton, maintainWeightRadioButton]
+        // super.hideKeyboardWhenTappedAround()
         
-//        super.hideKeyboardWhenTappedAround()
-        
-        for button in [weightGainRadioButton, maintainWeightRadioButton, loseWeightRadioButton]{
+        for button in [self.weightGainRadioButton, self.maintainWeightRadioButton, self.loseWeightRadioButton]{
             button?.addTarget(self, action: #selector(self.postNotification), for: .touchUpInside)
         }
     }
@@ -34,19 +37,9 @@ class SignUpFirstViewController: MainViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: Utilites
+    
     func postNotification() {
         NotificationCenter.default.post(name: Notification.Name.signInNextButtonWillEnable, object: nil)
     }
-    
-//    func textFieldDidChange() {
-//        NotificationCenter.default.post(name: Notification.Name.signInNextButtonWillEnable, object: nil)
-//    }
-//    
-//    func getTextFieldValue() -> String {
-//        if let text = textField.text {
-//            return text
-//        }
-//        return "Hooson"
-//    }
-    
 }

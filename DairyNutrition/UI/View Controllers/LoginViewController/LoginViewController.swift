@@ -11,21 +11,33 @@ import PasswordTextField
 
 class LoginViewController : MainViewController {
     
-    @IBOutlet var signInButton: DesignableButton!
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: PasswordTextField!
-    @IBOutlet weak var backButton: UIButton!
+    // MARK: Properties
     
+    @IBOutlet var signInButton: DesignableButton!
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: PasswordTextField!
+    
+    // MARK: View Life Cycle
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         // Hides keyboard when Tapped Arround
         super.hideKeyboardWhenTappedAround()
         
-        // Setup back button
-        // backButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        var authenticatedDairyAPI: AuthenticatedDairyAPI?
+        
+        authenticatedDairyAPI = AuthenticatedDairyAPI.init()
+        
+        authenticatedDairyAPI?.demo(){ success in
+            if success {
+                super.showAlert(title: "demo", text: "fuck yeah")
+            } else {
+                super.showAlert(title: "demo", text: "shit")
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,13 +47,10 @@ class LoginViewController : MainViewController {
     // MARK: - IBActions
     
     @IBAction func BackButtonTapped(_ sender: UIButton) {
-        dismissVC(completion: nil)
+        super.dismissVC(completion: nil)
     }
     
-    
     @IBAction func LoginButtonTapped(_ sender: UIButton) {
-
-        
         // Loading Test
         //showLoading()
         
@@ -57,14 +66,15 @@ class LoginViewController : MainViewController {
         //let buttons = [contButton, cancelButton]
         
         //showAlert(title: "Алдаа", text: "Lorem ipsum Dolar", buttons: buttons as NSArray?)
-        showAlert(title: "Анхаар", text: "Sign In дарсан")
+        super.showAlert(title: "Анхаар", text: "Sign In дарсан")
     }
     
     @IBAction func LoginWithFacebookButtonTapped(_ sender: UIButton) {
-        showAlert(title: "Анхаар", text: "Login with Facebook дарсан")
+        super.showAlert(title: "Анхаар", text: "Login with Facebook дарсан")
     }
+    
     @IBAction func LoginWithGoogleButtonTapped(_ sender: UIButton) {
-        showAlert(title: "Анхаар", text: "Login with Google дарсан")
+        super.showAlert(title: "Анхаар", text: "Login with Google дарсан")
     }
     
     @IBAction func ForgotPasswordButtonTapped(_ sender: UIButton) {

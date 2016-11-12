@@ -12,8 +12,13 @@ import AVFoundation
 
 class WelcomeViewController : MainViewController {
 
+    // MARK: Properties
+    
     var player: AVPlayer?
+    
     let videoURL: URL = Bundle.main.url(forResource: "moments", withExtension: "mp4")!
+    
+    // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,37 +30,40 @@ class WelcomeViewController : MainViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        player?.play()
-        addNotificationObserver(NSNotification.Name.AVPlayerItemDidPlayToEndTime.rawValue, selector: #selector(self.loopVideo))
+        self.player?.play()
+        super.addNotificationObserver(NSNotification.Name.AVPlayerItemDidPlayToEndTime.rawValue, selector: #selector(self.loopVideo))
     }
     
     override open func viewWillDisappear(_ animated: Bool) {
-        player?.pause()
-        removeNotificationObserver()
+        self.player?.pause()
+        super.removeNotificationObserver()
     }
     
+    // MARK: Utilities
+    
     func setupVideoBackground() {
-        player = AVPlayer(url: videoURL)
-        player?.actionAtItemEnd = .none
-        player?.isMuted = true
+        self.player = AVPlayer(url: videoURL)
+        self.player?.actionAtItemEnd = .none
+        self.player?.isMuted = true
         
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         playerLayer.zPosition = -1
-        
         playerLayer.frame = view.frame
         
+        // Adding player layer to view as sublayer
         view.layer.addSublayer(playerLayer)
         
-        player?.play()
+        // Starts playing
+        self.player?.play()
         
         //loop video
-        addNotificationObserver(NSNotification.Name.AVPlayerItemDidPlayToEndTime.rawValue, selector: #selector(self.loopVideo))
+        super.addNotificationObserver(NSNotification.Name.AVPlayerItemDidPlayToEndTime.rawValue, selector: #selector(self.loopVideo))
     }
     
     func loopVideo() {
-        player?.seek(to: kCMTimeZero)
-        player?.play()
+        self.player?.seek(to: kCMTimeZero)
+        self.player?.play()
     }
 
 }

@@ -368,8 +368,8 @@ extension String {
     
     ///EZSE: Returns bold NSAttributedString
     public func bold() -> NSAttributedString {
-    let boldString = NSMutableAttributedString(string: self, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
-    return boldString
+        let boldString = NSMutableAttributedString(string: self, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
+        return boldString
     }
     
     #endif
@@ -384,8 +384,8 @@ extension String {
     
     ///EZSE: Returns italic NSAttributedString
     public func italic() -> NSAttributedString {
-    let italicString = NSMutableAttributedString(string: self, attributes: [NSFontAttributeName: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
-    return italicString
+        let italicString = NSMutableAttributedString(string: self, attributes: [NSFontAttributeName: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
+        return italicString
     }
     
     #endif
@@ -394,14 +394,14 @@ extension String {
     
     ///EZSE: Returns hight of rendered string
     func height(_ width: CGFloat, font: UIFont, lineBreakMode: NSLineBreakMode?) -> CGFloat {
-    var attrib: [String: AnyObject] = [NSFontAttributeName: font]
-    if lineBreakMode != nil {
-    let paragraphStyle = NSMutableParagraphStyle()
-    paragraphStyle.lineBreakMode = lineBreakMode!
-    attrib.updateValue(paragraphStyle, forKey: NSParagraphStyleAttributeName)
-    }
-    let size = CGSize(width: width, height: CGFloat(DBL_MAX))
-    return ceil((self as NSString).boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attrib, context: nil).height)
+        var attrib: [String: AnyObject] = [NSFontAttributeName: font]
+        if lineBreakMode != nil {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineBreakMode = lineBreakMode!
+            attrib.updateValue(paragraphStyle, forKey: NSParagraphStyleAttributeName)
+        }
+        let size = CGSize(width: width, height: CGFloat(DBL_MAX))
+        return ceil((self as NSString).boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attrib, context: nil).height)
     }
     
     #endif
@@ -447,8 +447,8 @@ extension String {
     
     /// EZSE: copy string to pasteboard
     public func addToPasteboard() {
-    let pasteboard = UIPasteboard.general
-    pasteboard.string = self
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = self
     }
     
     #endif
