@@ -15,6 +15,7 @@
 		4009F0251DD2CF2D00293A5A /* SignUpWithUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4009F0241DD2CF2D00293A5A /* SignUpWithUserInfoViewController.swift */; };
 		401138F01DD6D55800983310 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401138EF1DD6D55800983310 /* Reachability.swift */; };
 		401138F21DD6EE2000983310 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401138F11DD6EE2000983310 /* Notification+Name.swift */; };
+		401138F41DD7148200983310 /* UserDefaults+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401138F31DD7148200983310 /* UserDefaults+Key.swift */; };
 		4058B9AD1DBBC46300024143 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4058B9AC1DBBC46300024143 /* Images.xcassets */; };
 		405965B41DD0ACE100EB5F19 /* SignUpSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405965B31DD0ACE100EB5F19 /* SignUpSecondViewController.swift */; };
 		405965B61DD0ACF100EB5F19 /* SignUpThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405965B51DD0ACF100EB5F19 /* SignUpThirdViewController.swift */; };
@@ -49,6 +50,7 @@
 		4077B1AE1DC6E5710074EB3B /* Designable+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077B1AD1DC6E5710074EB3B /* Designable+Button.swift */; };
 		40984AD81DC4A15100BA7D6B /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40984AD71DC4A15100BA7D6B /* UIView+IBInspectable.swift */; };
 		40A1117C1DD1A88F0096E78D /* RadioButtonWithSubtext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1117B1DD1A88F0096E78D /* RadioButtonWithSubtext.swift */; };
+		40AC566B1DD8A78600F30F0A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AC566A1DD8A78600F30F0A /* UserService.swift */; };
 		40CCDF391DBBBCFB00D00981 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */; };
 		40CCDF3E1DBBBCFB00D00981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CCDF3C1DBBBCFB00D00981 /* Main.storyboard */; };
 		40CCDF411DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF3F1DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld */; };
@@ -70,6 +72,7 @@
 		4009F0241DD2CF2D00293A5A /* SignUpWithUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpWithUserInfoViewController.swift; sourceTree = "<group>"; };
 		401138EF1DD6D55800983310 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		401138F11DD6EE2000983310 /* Notification+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
+		401138F31DD7148200983310 /* UserDefaults+Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Key.swift"; sourceTree = "<group>"; };
 		4058B9AC1DBBC46300024143 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		405965B31DD0ACE100EB5F19 /* SignUpSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSecondViewController.swift; sourceTree = "<group>"; };
 		405965B51DD0ACF100EB5F19 /* SignUpThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpThirdViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		4077B1AD1DC6E5710074EB3B /* Designable+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Designable+Button.swift"; sourceTree = "<group>"; };
 		40984AD71DC4A15100BA7D6B /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		40A1117B1DD1A88F0096E78D /* RadioButtonWithSubtext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonWithSubtext.swift; sourceTree = "<group>"; };
+		40AC566A1DD8A78600F30F0A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		40CCDF351DBBBCFB00D00981 /* DairyNutrition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DairyNutrition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40CCDF3D1DBBBCFB00D00981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 				405965C21DD0CB9D00EB5F19 /* RadioButton.swift */,
 				40A1117B1DD1A88F0096E78D /* RadioButtonWithSubtext.swift */,
 				401138F11DD6EE2000983310 /* Notification+Name.swift */,
+				401138F31DD7148200983310 /* UserDefaults+Key.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			children = (
 				4008EE7F1DD23D4E007B3F8B /* DairyAPI.swift */,
 				401138EF1DD6D55800983310 /* Reachability.swift */,
+				40AC566A1DD8A78600F30F0A /* UserService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				405965C31DD0CB9D00EB5F19 /* RadioButton.swift in Sources */,
 				40984AD81DC4A15100BA7D6B /* UIView+IBInspectable.swift in Sources */,
 				405B818A1DC2295000E761BC /* UIColorExtensions.swift in Sources */,
+				401138F41DD7148200983310 /* UserDefaults+Key.swift in Sources */,
 				405B81AD1DC23DFF00E761BC /* MainViewController.swift in Sources */,
 				405965B81DD0AD1500EB5F19 /* SignUpFourthViewController.swift in Sources */,
 				405B81A41DC22D1100E761BC /* BlockLongPress.swift in Sources */,
@@ -448,6 +455,7 @@
 				40F6932B1DCF6F4200A4D75B /* WelcomeViewController.swift in Sources */,
 				405965BF1DD0AD4B00EB5F19 /* SignUpSeventhViewController.swift in Sources */,
 				405B81A91DC22D1100E761BC /* EZSwiftFunctions.swift in Sources */,
+				40AC566B1DD8A78600F30F0A /* UserService.swift in Sources */,
 				405965B61DD0ACF100EB5F19 /* SignUpThirdViewController.swift in Sources */,
 				405B81A31DC22D1100E761BC /* BlockButton.swift in Sources */,
 				40FD9C761DD022CE00436D5D /* SignUpPageViewController.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import UIKit
 import PasswordTextField
+import SwiftyUserDefaults
 
 class LoginViewController : MainViewController {
     
@@ -19,6 +20,13 @@ class LoginViewController : MainViewController {
     
     @IBOutlet weak var passwordTextField: PasswordTextField!
     
+    public override func didSetCurrentUser() {
+        super.didSetCurrentUser()
+        
+        Defaults[.loggedUser] = self.currentUser
+        Defaults[.loggedIn] = true
+    }
+    
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
@@ -26,18 +34,7 @@ class LoginViewController : MainViewController {
         
         // Hides keyboard when Tapped Arround
         super.hideKeyboardWhenTappedAround()
-        
-        var authenticatedDairyAPI: AuthenticatedDairyAPI?
-        
-        authenticatedDairyAPI = AuthenticatedDairyAPI.init()
-        
-        authenticatedDairyAPI?.demo(){ success in
-            if success {
-                super.showAlert(title: "demo", text: "fuck yeah")
-            } else {
-                super.showAlert(title: "demo", text: "shit")
-            }
-        }
+        Defaults.removeAll()
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,7 +49,45 @@ class LoginViewController : MainViewController {
     
     @IBAction func LoginButtonTapped(_ sender: UIButton) {
         // Loading Test
-        //showLoading()
+        super.showLoading()
+        
+        UserService().loginUser("qweqweqw", password: "qweqweqe") { user in
+            
+            super.stopLoading()
+            if let usertest = Defaults[.loggedUser]! as? User{
+                super.showAlert(title: "Loggin in as", text: "\(usertest.fullName)")
+            } else {
+
+
+            if user != nil {
+                print(user?.weightGoal)
+                
+                self.currentUser = user
+                super.showAlert(title: "Loggin success", text: "success")
+            }
+            super.showAlert(title: "Error", text: "Error")
+            }
+        }
+        
+//        let authenticatedAPI = AuthenticatedDairyAPI()
+        
+//        authenticatedAPI.loginUser("qweq", password: "qweqweqw") { user in
+//            if user != nil {
+//                super.showAlert(title: "done", text: "fck yeah")
+//            }
+//            super.showAlert(title: "done", text: "shit")
+//        }
+        
+//        AccountManager.defaultAccountManager.login(email: "qwerqwerqwe", password: "qwerqwerq") { success in
+//            
+//            if success {
+//                super.stopLoading()
+//                super.showAlert(title: "Successful", text: "Logged in")
+//            }
+//            
+//            super.stopLoading()
+//            super.showAlert(title: "noo", text: "noo")
+//        }
         
         //perform(#selector(stopLoading),
         //    with: nil,
@@ -66,7 +101,7 @@ class LoginViewController : MainViewController {
         //let buttons = [contButton, cancelButton]
         
         //showAlert(title: "Алдаа", text: "Lorem ipsum Dolar", buttons: buttons as NSArray?)
-        super.showAlert(title: "Анхаар", text: "Sign In дарсан")
+        //super.showAlert(title: "Анхаар", text: "Sign In дарсан")
     }
     
     @IBAction func LoginWithFacebookButtonTapped(_ sender: UIButton) {

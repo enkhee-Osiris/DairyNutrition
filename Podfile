@@ -7,7 +7,7 @@ target 'DairyNutrition' do
 
   # Pods for DairyNutrition
   pod 'Alamofire', '~> 4.0'
-  pod 'Decodable', '~> 0.5'
+  pod 'SwiftyJSON', '~> 3.1'
   pod 'SwiftyUserDefaults', '~> 3.0'
   pod 'PasswordTextField', '~> 1.0'
   pod 'NVActivityIndicatorView', '~> 3.0'

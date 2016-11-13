@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Decodable.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>DropDown.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyUserDefaults.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,7 +52,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1F634623882E0829C7822B77D702A667</key>
+		<key>3024B08588FC0F42BEBCBF9912566818</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5CBDDA2A887DD78BC00CE068155534E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>92B19AC247C179A49F1A2978501888E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9F766ADB76A46AB732825D44C4BAAABF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BE440FFD0E4C7A7900E66E9CFE748592</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>CD224835B4F019D856E8192E2C5744D6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D14B2CEF951673FAA6B2B17D03FF55B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

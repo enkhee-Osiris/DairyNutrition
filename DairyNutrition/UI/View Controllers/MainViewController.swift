@@ -11,10 +11,18 @@ import NVActivityIndicatorView
 
 class MainViewController : UIViewController, NVActivityIndicatorViewable {
     
+    public var currentUser: User? {
+        didSet { didSetCurrentUser() }
+    }
+    
+    func didSetCurrentUser() {}
+    
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        super.addNotificationObserver(Notification.Name.noNetworkConnection.rawValue, selector: #selector(self.showNetworkAlert))
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,7 +66,7 @@ class MainViewController : UIViewController, NVActivityIndicatorViewable {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func getValue() {
-        
+    func showNetworkAlert() {
+        showAlert(title: "Network Error", text: "Check your internet connection")
     }
 }
