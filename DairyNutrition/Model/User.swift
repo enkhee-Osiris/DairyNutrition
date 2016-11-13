@@ -31,6 +31,9 @@ enum UserGender: Int {
 
 @objc(User)
 class User: NSObject, NSCoding {
+    
+    // MARK: Properties
+    
     let fullName: String?
     let email: String?
     
@@ -46,6 +49,8 @@ class User: NSObject, NSCoding {
     
     let height: String?
     let heightUnit: UserHeightUnit?
+    
+    // MARK: - Initial functions
     
     public init(fullName: String,
         email: String,
@@ -76,28 +81,28 @@ class User: NSObject, NSCoding {
         self.fullName = aDecoder.decodeObject(forKey: "fullName") as? String
         self.email = aDecoder.decodeObject(forKey: "email") as? String
         
-        self.weightGoalType =  UserWeightGoal(rawValue: aDecoder.decodeInteger(forKey: "weighGoalType"))
-        self.weightGoal = aDecoder.decodeDouble(forKey: "weightGoal")
-        self.weightGoalUnit =  UserWeightUnit(rawValue: aDecoder.decodeInteger(forKey: "weightGoalUnit"))
+        self.weightGoalType =  UserWeightGoal(rawValue: (aDecoder.decodeObject(forKey: "weightGoalType") as! Int))
+        self.weightGoal = aDecoder.decodeObject(forKey: "weightGoal") as? Double
+        self.weightGoalUnit =  UserWeightUnit(rawValue: (aDecoder.decodeObject(forKey: "weightGoalUnit") as! Int))
         
-        self.gender =  UserGender(rawValue: aDecoder.decodeInteger(forKey: "gender"))
+        self.gender =  UserGender(rawValue: aDecoder.decodeObject(forKey: "gender") as! Int)
         
-        self.activityLevel =  UserActivityLevel(rawValue: aDecoder.decodeInteger(forKey: "activityLevel"))
+        self.activityLevel =  UserActivityLevel(rawValue: aDecoder.decodeObject(forKey: "activityLevel") as! Int)
         
-        self.weight = aDecoder.decodeDouble(forKey: "weight")
-        self.weightUnit = UserWeightUnit(rawValue: aDecoder.decodeInteger(forKey: "weightUnit"))
+        self.weight = aDecoder.decodeObject(forKey: "weight") as? Double
+        self.weightUnit = UserWeightUnit(rawValue: aDecoder.decodeObject(forKey: "weightUnit") as! Int)
         
         self.height = aDecoder.decodeObject(forKey: "height") as? String
-        self.heightUnit = UserHeightUnit(rawValue: aDecoder.decodeInteger(forKey: "heightUnit"))
+        self.heightUnit = UserHeightUnit(rawValue: aDecoder.decodeObject(forKey: "heightUnit") as! Int)
     }
     
     public func encode(with aCoder: NSCoder) {
+        print("Encoding")
         aCoder.encode(fullName, forKey: "fullName")
         aCoder.encode(email, forKey: "email")
         
         aCoder.encode(weightGoalType?.rawValue, forKey: "weightGoalType")
         aCoder.encode(weightGoal, forKey: "weightGoal")
-        //aCoder.encode(<#T##realv: Double##Double#>, forKey: <#T##String#>)
         aCoder.encode(weightGoalUnit?.rawValue, forKey: "weightGoalUnit")
         
         aCoder.encode(gender?.rawValue, forKey: "gender")

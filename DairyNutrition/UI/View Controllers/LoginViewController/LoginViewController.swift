@@ -54,8 +54,8 @@ class LoginViewController : MainViewController {
         UserService().loginUser("qweqweqw", password: "qweqweqe") { user in
             
             super.stopLoading()
-            if let usertest = Defaults[.loggedUser]! as? User{
-                super.showAlert(title: "Loggin in as", text: "\(usertest.fullName)")
+            if Defaults[.loggedUser] != nil {
+                super.showAlert(title: "Logged in as", text: "\(Defaults[.loggedUser]?.fullName)")
             } else {
 
 
