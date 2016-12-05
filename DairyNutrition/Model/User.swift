@@ -50,6 +50,9 @@ class User: NSObject, NSCoding {
     let height: String?
     let heightUnit: UserHeightUnit?
     
+    // Date of Birth
+    let dob: String?
+    
     // MARK: - Initial functions
     
     public init(fullName: String,
@@ -62,7 +65,8 @@ class User: NSObject, NSCoding {
         weight: Double,
         weightUnit: UserWeightUnit,
         height: String,
-        heightUnit: UserHeightUnit)
+        heightUnit: UserHeightUnit,
+        dateOfBirth: String)
     {
         self.fullName = fullName
         self.email = email
@@ -75,6 +79,7 @@ class User: NSObject, NSCoding {
         self.weightUnit = weightUnit
         self.height = height
         self.heightUnit = heightUnit
+        self.dob = dateOfBirth
     }
     
     public required init(coder aDecoder: NSCoder) {
@@ -94,6 +99,7 @@ class User: NSObject, NSCoding {
         
         self.height = aDecoder.decodeObject(forKey: "height") as? String
         self.heightUnit = UserHeightUnit(rawValue: aDecoder.decodeObject(forKey: "heightUnit") as! Int)
+        self.dob = aDecoder.decodeObject(forKey: "dateOfBirth") as? String
     }
     
     public func encode(with aCoder: NSCoder) {
@@ -114,13 +120,15 @@ class User: NSObject, NSCoding {
         
         aCoder.encode(height, forKey: "height")
         aCoder.encode(heightUnit?.rawValue, forKey: "heightUnit")
+        
+        aCoder.encode(dob, forKey: "dateOfBirth")
     }
     
     public required init(fromJson json: AnyObject) {
         
         let json = JSON(json)
         
-        self.fullName = json["user"]["firstname"].stringValue
+        self.fullName = "\(json["user"]["firstname"].stringValue) \(json["user"]["lastname"].stringValue)"
         self.email = json["user"]["email"].stringValue
         self.weightGoalType = UserWeightGoal(rawValue: json["user"]["weightGoalType"].intValue)
         self.weightGoal = json["user"]["weightGoal"].doubleValue
@@ -131,5 +139,6 @@ class User: NSObject, NSCoding {
         self.weightUnit = UserWeightUnit(rawValue: json["user"]["weightUnit"].intValue)
         self.height = json["user"]["height"].stringValue
         self.heightUnit = UserHeightUnit(rawValue: json["user"]["heightUnit"].intValue)
+        self.dob = json["user"]["dateOfBirth"].stringValue
     }
 }

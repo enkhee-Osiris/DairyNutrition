@@ -48,6 +48,18 @@ final class DairyAPI {
         }
     }
     
+    fileprivate func test(_ endpoint: String, method: HTTPMethod, encoding: Alamofire.ParameterEncoding, parameters: [String: AnyObject]?,
+                          success: @escaping (AnyObject) -> Void, failure: @escaping (NSError) -> Void) {
+        print("Starting \(method) \(apiBaseURL + endpoint) (\(parameters ?? [:]))")
+        Alamofire.request(apiBaseURL + endpoint, method: method, parameters: parameters, encoding: encoding)
+            .responseString { response in
+                print("Success: \(response.result.isSuccess)")
+                print("Response String: \(response.result.value)")
+                success("{\"qweqw\": 3}" as AnyObject)
+            }
+    }
+
+    
     private func postNotification() {
         NotificationCenter.default.post(name: Notification.Name.noNetworkConnection, object: nil)
     }

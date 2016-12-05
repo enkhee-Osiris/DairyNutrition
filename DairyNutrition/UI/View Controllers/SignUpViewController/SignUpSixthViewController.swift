@@ -19,7 +19,7 @@ class SignUpSixthViewController: MainViewController {
     
     let heightUnitDropDown = DropDown()
     
-    var isCm: Bool?
+    var isCm: Bool = true
     
     // MARK: View Life Cycle
     
@@ -55,7 +55,6 @@ class SignUpSixthViewController: MainViewController {
         
         // set kg selected
         self.heightUnitDropDown.selectRow(at: 0)
-        self.isCm = true
         
         // Action triggered on selection
         self.heightUnitDropDown.selectionAction = { [unowned self] (index, item) in
@@ -65,13 +64,21 @@ class SignUpSixthViewController: MainViewController {
     }
     
     func postNotification() {
-        if (self.heightTextField.text?.isNumber())! && self.isCm!{
+        if (self.heightTextField.text?.isNumber())! && self.isCm{
             NotificationCenter.default.post(name: Notification.Name.signInNextButtonWillEnable, object: nil)
         }
         // TODO: check is length when ft/in checked
         else {
             NotificationCenter.default.post(name: Notification.Name.signInNextButtonWillDisable, object: nil)
         }
+    }
+    
+    func userHeight() -> String {
+        return self.heightTextField.text!
+    }
+    
+    func userHeightUnit() -> UserHeightUnit {
+        return self.isCm ? UserHeightUnit(rawValue: 0)! : UserHeightUnit(rawValue: 1)!
     }
     
     //MARK: IBActions

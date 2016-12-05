@@ -19,7 +19,7 @@ class SignUpSecondViewController: MainViewController {
     
     let weightUnitDropDown = DropDown()
     
-    var isKg: Bool?
+    var isKg: Bool = true
     
     // MARK: View life cycle
     
@@ -55,7 +55,6 @@ class SignUpSecondViewController: MainViewController {
         
         // set kg selected
         self.weightUnitDropDown.selectRow(at: 0)
-        self.isKg = true
         
         // Action triggered on selection
         self.weightUnitDropDown.selectionAction = { [unowned self] (index, item) in
@@ -65,11 +64,19 @@ class SignUpSecondViewController: MainViewController {
     }
 
     func postNotification() {
-        if (weightTextField.text?.isNumber())!{
+        if (self.weightTextField.text?.isNumber())!{
             NotificationCenter.default.post(name: Notification.Name.signInNextButtonWillEnable, object: nil)
         } else {
             NotificationCenter.default.post(name: Notification.Name.signInNextButtonWillDisable, object: nil)
         }
+    }
+    
+    func userWeightGoal() -> Double {
+        return Double(self.weightTextField.text!)!
+    }
+    
+    func userWeightGoalUnit() -> UserWeightUnit {
+        return self.isKg ? UserWeightUnit(rawValue: 0)! : UserWeightUnit(rawValue: 1)!
     }
     
     //MARK: IBActions

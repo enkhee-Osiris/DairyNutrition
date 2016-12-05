@@ -42,4 +42,14 @@ class SignUpFirstViewController: MainViewController {
     func postNotification() {
         NotificationCenter.default.post(name: Notification.Name.signInNextButtonWillEnable, object: nil)
     }
+    
+    func userWeightGoalType() -> UserWeightGoal {
+        if self.weightGainRadioButton.isSelected {
+            return UserWeightGoal(rawValue: 0)!
+        } else if self.maintainWeightRadioButton.isSelected {
+            return UserWeightGoal(rawValue: 1)!
+        } else {
+            return UserWeightGoal(rawValue: 2)!
+        }
+    }
 }

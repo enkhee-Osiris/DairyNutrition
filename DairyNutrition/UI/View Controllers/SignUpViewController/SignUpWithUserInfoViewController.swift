@@ -22,12 +22,28 @@ class SignUpWithUserInfoViewController: MainViewController {
     
     @IBOutlet weak var passwordTextField: PasswordTextField!
     
+    // User Properties
+    
+    var weightGoalType: UserWeightGoal?
+    var weightGoal: Double?
+    var weightGoalUnit: UserWeightUnit?
+    
+    var gender: UserGender?
+    var activityLevel: UserActivityLevel?
+    
+    var weight: Double?
+    var weightUnit: UserWeightUnit?
+    
+    var height: String?
+    var heightUnit: UserHeightUnit?
+
+    var dateOfBirth: String?
     
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         // Hides keyboard when tapped around
         super.hideKeyboardWhenTappedAround()
     }
@@ -39,6 +55,7 @@ class SignUpWithUserInfoViewController: MainViewController {
     // MARK: IBActions
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
+//        super.showAlert(title: "Test", text: "\(self.height)")
         if (firstNameTextField.text != "") || (lastNameTextField.text != "") || (emailTextField.text != "") {
             
             if !(emailTextField.text?.isEmail)! {
@@ -46,6 +63,29 @@ class SignUpWithUserInfoViewController: MainViewController {
             }
             if passwordTextField.isInvalid() {
                 super.showAlert(title: "Error", text: passwordTextField.errorMessage())
+            }
+            if (emailTextField.text?.isEmail)! && passwordTextField.isValid() {
+                print("fine")
+                let regUser = User(fullName: firstNameTextField.text! + " " + lastNameTextField.text!,
+                                   email: emailTextField.text!,
+                                   weightGoalType: weightGoalType!,
+                                   weightGoal: weightGoal!,
+                                   weightGoalUnit: weightGoalUnit!,
+                                   gender: gender!,
+                                   activityLevel: activityLevel!,
+                                   weight: weight!,
+                                   weightUnit: weightUnit!,
+                                   height: height!,
+                                   heightUnit: heightUnit!,
+                                   dateOfBirth: dateOfBirth!)
+                
+                UserService().registerUser(user: regUser, password: passwordTextField.text!) { success in
+                    if success {
+                        super.showAlert(title: "Amjilttai burtgelee", text: "Nice")
+                    } else {
+                        super.showAlert(title: "Burtguuleh aldaa", text: "Aldaa")
+                    }
+                }
             }
             
         } else {

@@ -11,7 +11,7 @@ import UIKit
 class SignUpViewController : MainViewController {
     
     // MARK: Properties
-    
+
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var pageControl: UIPageControl!
@@ -20,10 +20,12 @@ class SignUpViewController : MainViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     
+    let userInfoVC = UIStoryboard.mainStoryboard?.instantiateVC(SignUpWithUserInfoViewController.self)
+    
     var textsOfLabel = [
-        "Таны зорилго юу вэ?",
+        "What is your goal?",
         "How much weight would you like to gain?",
-        "What is your gender?",
+        "What is your gendvarr",
         "What is your activity level?",
         "What is your current weight?",
         "What is your height?",
@@ -66,6 +68,29 @@ class SignUpViewController : MainViewController {
     func disableNextButton() {
         self.nextButton.isEnabled = false
     }
+    
+    func setUserProperties(vc: UIViewController) {
+        switch vc {
+        case let firstVC as SignUpFirstViewController:
+//            let weightGoalType = firstVC.userWeightGoalType()
+            userInfoVC?.weightGoalType = firstVC.userWeightGoalType()
+        case let secondVC as SignUpSecondViewController:
+            userInfoVC?.weightGoal = secondVC.userWeightGoal()
+            userInfoVC?.weightGoalUnit = secondVC.userWeightGoalUnit()
+        case let thirdVC as SignUpThirdViewController:
+            userInfoVC?.gender = thirdVC.userGender()
+        case let fourthVC as SignUpFourthViewController:
+            userInfoVC?.activityLevel = fourthVC.userActivityLevel()
+        case let fifthVC as SignUpFifthViewController:
+            userInfoVC?.weight = fifthVC.userWeight()
+            userInfoVC?.weightUnit = fifthVC.userWeightUnit()
+        case let sixthVC as SignUpSixthViewController:
+            userInfoVC?.height = sixthVC.userHeight()
+            userInfoVC?.heightUnit = sixthVC.userHeightUnit()
+        default:
+            print("Error while setting user properties")
+        }
+    }
 
     
     // MARK: IBActions
@@ -73,19 +98,20 @@ class SignUpViewController : MainViewController {
     @IBAction func NextButtonTapped(_ sender: UIButton) {
         signUpPageViewController?.scrollToNextViewController()
         nextButton.isEnabled = false
-        if let lastVC = signUpPageViewController?.getViewController(index: pageControl.currentPage) as? SignUpSeventhViewController {
+        let currentVC = signUpPageViewController?.getViewController(index: pageControl.currentPage)
+        if let lastVC = currentVC as? SignUpSeventhViewController {
             
-            super.presentVC((UIStoryboard.mainStoryboard?.instantiateVC(SignUpWithUserInfoViewController.self))!)
-            
+            // Setting Date of birth
             let dateformatter = DateFormatter()
-
-            dateformatter.dateFormat = "MM/dd/yy"
-
-            let now = dateformatter.string(from: lastVC.dateOfBirth!)
-//
-//            super.showAlert(title: "Date", text: now)
+            dateformatter.dateFormat = "yyyy/MM/dd"
+            userInfoVC?.dateOfBirth = dateformatter.string(from: lastVC.dateOfBirth!)
+            
+            super.presentVC(userInfoVC!)
+        } else {
+            self.setUserProperties(vc: currentVC!)
         }
     }
+    
     
     @IBAction func BackButtonTapped(_ sender: UIButton) {
         if (signUpPageViewController?.getViewController(index: pageControl.currentPage) as? SignUpFirstViewController) != nil{

@@ -23,7 +23,7 @@ class LoginViewController : MainViewController {
     public override func didSetCurrentUser() {
         super.didSetCurrentUser()
         
-        Defaults[.loggedUser] = self.currentUser
+        Defaults[.loggedUser] = super.currentUser
         Defaults[.loggedIn] = true
     }
     
@@ -62,7 +62,7 @@ class LoginViewController : MainViewController {
             if user != nil {
                 print(user?.weightGoal)
                 
-                self.currentUser = user
+                super.currentUser = user
                 super.showAlert(title: "Loggin success", text: "success")
             }
             super.showAlert(title: "Error", text: "Error")
