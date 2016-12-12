@@ -18,6 +18,8 @@ class DashboardTableViewController: UITableViewController {
     
     @IBOutlet weak var currentWeightLabel: UILabel!
     
+    var delegate: ContainerViewControllerProtocol?
+    
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
@@ -38,4 +40,14 @@ class DashboardTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
+    // MARK: - IBActions
+    
+    @IBAction func addFoodButtonTapped(_ sender: Any) {
+        self.delegate?.pushAddFoodViewController()
+    }
+}
+
+protocol ContainerViewControllerProtocol {
+    func pushAddFoodViewController()
 }

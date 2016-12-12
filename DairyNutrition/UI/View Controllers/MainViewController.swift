@@ -65,4 +65,23 @@ class MainViewController : UIViewController, NVActivityIndicatorViewable {
     func showNetworkAlert() {
         showAlert(title: "Network Error", text: "Check your internet connection")
     }
+    
+    func setupNavigationBar() {
+        //self.navigationController?.navigationBar.barStyle = UIBarStyle.
+        
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = pinkColor
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,
+                                                                        NSFontAttributeName: UIFont.systemFont(ofSize: 20, weight: UIFontWeightLight)]
+        
+        
+        
+        
+        let backImage = UIImage(named: "back-inverted-icon")
+        self.navigationController?.navigationBar.backIndicatorImage = backImage?.resizeWithHeight(26.0)
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage?.resizeWithHeight(26.0)
+    }
 }

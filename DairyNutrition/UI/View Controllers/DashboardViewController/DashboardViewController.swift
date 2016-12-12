@@ -10,10 +10,12 @@ import UIKit
 import FSCalendar
 import KYDrawerController
 
-class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalendarDelegate {
+class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalendarDelegate, ContainerViewControllerProtocol {
     
+    // MARK: Properties
     
     @IBOutlet weak var calendar: FSCalendar!
+    
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     
     private let formatter: DateFormatter = {
@@ -29,12 +31,14 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
         
         self.setupCalendar()
         
-        let menuButton = UIButton.init(type: .custom)
-        menuButton.setImage(UIImage.init(named: "menu-icon.png"), for: UIControlState.normal)
+        let menuButton = UIButton(type: .custom)
+        menuButton.setImage(UIImage(named: "menu-inverted-icon"), for: UIControlState.normal)
         menuButton.addTarget(self, action:#selector(menuButtonTapped), for: UIControlEvents.touchUpInside)
         menuButton.frame = CGRect.init(x: 0, y: 0, width: 30, height: 26)
         let barButton = UIBarButtonItem.init(customView: menuButton)
         self.navigationItem.leftBarButtonItem = barButton
+        
+        super.setupNavigationBar()
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,12 +70,34 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
         return true
     }
     
-    // MARK: - IBActions
+    func pushAddFoodViewController() {
+        super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "AddFoodViewController"))!)
+    }
     
-    func menuButtonTapped(_ sender: UIBarButtonItem) {
+    func closeMenu() {
+        if let drawerController = navigationController?.parent as? KYDrawerController {
+            drawerController.setDrawerState(.closed, animated: true)
+        }
+    }
+    
+    func openMenu() {
         if let drawerController = navigationController?.parent as? KYDrawerController {
             drawerController.setDrawerState(.opened, animated: true)
         }
+    }
+    
+    // MARK: ContainerViewControllerProtocol
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let containerViewViewController = segue.destination as! DashboardTableViewController
+        
+        containerViewViewController.delegate = self
+    }
+    
+    // MARK: - IBActions
+    
+    func menuButtonTapped(_ sender: UIBarButtonItem) {
+        self.openMenu()
     }
     
 

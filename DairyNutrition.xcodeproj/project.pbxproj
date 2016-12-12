@@ -54,6 +54,7 @@
 		40890E2E1DF7D05900DCE931 /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40890E2D1DF7D05900DCE931 /* CustomSearchController.swift */; };
 		40890E301DF7D07300DCE931 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40890E2F1DF7D07300DCE931 /* CustomSearchBar.swift */; };
 		40890E321DF7D0AD00DCE931 /* FoodSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40890E311DF7D0AD00DCE931 /* FoodSearchViewController.swift */; };
+		4094E6921DFEE3120013DEBE /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4094E6911DFEE3120013DEBE /* AddFoodViewController.swift */; };
 		40984AD81DC4A15100BA7D6B /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40984AD71DC4A15100BA7D6B /* UIView+IBInspectable.swift */; };
 		40A1117C1DD1A88F0096E78D /* RadioButtonWithSubtext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1117B1DD1A88F0096E78D /* RadioButtonWithSubtext.swift */; };
 		40AC566B1DD8A78600F30F0A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AC566A1DD8A78600F30F0A /* UserService.swift */; };
@@ -118,6 +119,7 @@
 		40890E2D1DF7D05900DCE931 /* CustomSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
 		40890E2F1DF7D07300DCE931 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		40890E311DF7D0AD00DCE931 /* FoodSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodSearchViewController.swift; sourceTree = "<group>"; };
+		4094E6911DFEE3120013DEBE /* AddFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		40984AD71DC4A15100BA7D6B /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		40A1117B1DD1A88F0096E78D /* RadioButtonWithSubtext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonWithSubtext.swift; sourceTree = "<group>"; };
 		40AC566A1DD8A78600F30F0A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -236,6 +238,14 @@
 			path = FoodSearchViewController;
 			sourceTree = "<group>";
 		};
+		4094E6901DFEE2EA0013DEBE /* AddFoodViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4094E6911DFEE3120013DEBE /* AddFoodViewController.swift */,
+			);
+			path = AddFoodViewController;
+			sourceTree = "<group>";
+		};
 		4097A6951DBF42920092E8C8 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +296,7 @@
 				40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */,
 				40890E281DF7B6DE00DCE931 /* MenuTableViewController.swift */,
 				40086D531DF69051003B4BA1 /* DashboardViewController */,
+				4094E6901DFEE2EA0013DEBE /* AddFoodViewController */,
 				40890E2C1DF7CF9300DCE931 /* FoodSearchViewController */,
 				405B81AE1DC23E2B00E761BC /* LoginViewController */,
 				40FD9C721DD0227300436D5D /* SignUpViewController */,
@@ -496,6 +507,7 @@
 				405965BF1DD0AD4B00EB5F19 /* SignUpSeventhViewController.swift in Sources */,
 				405B81A91DC22D1100E761BC /* EZSwiftFunctions.swift in Sources */,
 				400726381DF7197100908A3D /* DashboardViewController.swift in Sources */,
+				4094E6921DFEE3120013DEBE /* AddFoodViewController.swift in Sources */,
 				40AC566B1DD8A78600F30F0A /* UserService.swift in Sources */,
 				405965B61DD0ACF100EB5F19 /* SignUpThirdViewController.swift in Sources */,
 				405B81A31DC22D1100E761BC /* BlockButton.swift in Sources */,

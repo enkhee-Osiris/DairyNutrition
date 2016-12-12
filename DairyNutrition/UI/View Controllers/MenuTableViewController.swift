@@ -33,9 +33,9 @@ class MenuTableViewController: UITableViewController {
         userEmailLabel.text = Shared.shared.currentUser.email
         
         if Shared.shared.currentUser.gender == UserGender.male {
-            userAvatarImageView.image = UIImage(named: "male-icon")
+            userAvatarImageView.image = UIImage(named: "male-icon")?.resizeWithHeight(60)
         } else {
-            userAvatarImageView.image = UIImage(named: "female-icon")
+            userAvatarImageView.image = UIImage(named: "female-icon")?.resizeWithHeight(60)
         }
         
         
@@ -54,7 +54,7 @@ class MenuTableViewController: UITableViewController {
         
         switch indexPath.row {
         case 1:
-            if let drawerController = navigationController?.parent as? KYDrawerController {
+            if let drawerController = parent as? KYDrawerController {
                 drawerController.setDrawerState(.closed, animated: true)
             }
         case 2:
@@ -74,8 +74,5 @@ class MenuTableViewController: UITableViewController {
             Defaults[.loggedIn] = false
             super.presentVC((UIStoryboard.mainStoryboard?.instantiateVC(WelcomeViewController.self))!)
         }
-        
-        //self.performSegueWithIdentifier("yourIdentifier", sender: self)
     }
-    
 }
