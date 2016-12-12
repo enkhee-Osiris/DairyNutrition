@@ -9,13 +9,9 @@
 import UIKit
 import NVActivityIndicatorView
 
+
 class MainViewController : UIViewController, NVActivityIndicatorViewable {
     
-    public var currentUser: User? {
-        didSet { didSetCurrentUser() }
-    }
-    
-    func didSetCurrentUser() {}
     
     // MARK: View Life Cycle
     
@@ -31,10 +27,10 @@ class MainViewController : UIViewController, NVActivityIndicatorViewable {
     
     // MARK: Utilites
     
-    func showLoading(text: String? = "Loading...") {
+    func showLoading(text: String? = "") {
         
         //size of loading
-        let size = CGSize(width: 30, height: 30)
+        let size = CGSize(width: 50, height: 50)
         
         self.startAnimating(size, message: text, type: NVActivityIndicatorType.ballGridPulse)
     }

@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FSCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>KYDrawerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,12 +62,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3024B08588FC0F42BEBCBF9912566818</key>
+		<key>1D30AE0726BFF4455917F99D607CB15B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5CBDDA2A887DD78BC00CE068155534E5</key>
+		<key>43F633B3903DE39E43C0B694E1C46B06</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +82,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>92B19AC247C179A49F1A2978501888E3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>9F766ADB76A46AB732825D44C4BAAABF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BA4821724901F1908E4735A1218EE668</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CD224835B4F019D856E8192E2C5744D6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E98831698B739F6D157288680570F35D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB94EBE45931A59F86F049F4488308E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

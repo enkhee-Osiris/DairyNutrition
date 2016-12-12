@@ -12,4 +12,6 @@ target 'DairyNutrition' do
   pod 'PasswordTextField', '~> 1.0'
   pod 'NVActivityIndicatorView', '~> 3.0'
   pod 'DropDown', '~> 2'
+  pod 'KYDrawerController', '~> 2.0'
+  pod 'FSCalendar', '~> 2.6'
 end

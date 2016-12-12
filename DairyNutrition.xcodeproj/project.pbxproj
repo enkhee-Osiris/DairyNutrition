@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		20E2E4C26EDFCE4109645863 /* Pods_DairyNutrition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BAB43CBDE0133D41A98100 /* Pods_DairyNutrition.framework */; };
+		400726361DF7155000908A3D /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400726351DF7155000908A3D /* DashboardTableViewController.swift */; };
+		400726381DF7197100908A3D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400726371DF7197100908A3D /* DashboardViewController.swift */; };
 		4008EE7A1DD2111A007B3F8B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4008EE791DD2111A007B3F8B /* StringExtensions.swift */; };
 		4008EE7C1DD235B6007B3F8B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4008EE7B1DD235B6007B3F8B /* User.swift */; };
-		4008EE7E1DD23BCD007B3F8B /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4008EE7D1DD23BCD007B3F8B /* AccountManager.swift */; };
+		4008EE7E1DD23BCD007B3F8B /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4008EE7D1DD23BCD007B3F8B /* Shared.swift */; };
 		4008EE801DD23D4E007B3F8B /* DairyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4008EE7F1DD23D4E007B3F8B /* DairyAPI.swift */; };
 		4009F0251DD2CF2D00293A5A /* SignUpWithUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4009F0241DD2CF2D00293A5A /* SignUpWithUserInfoViewController.swift */; };
 		401138F01DD6D55800983310 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401138EF1DD6D55800983310 /* Reachability.swift */; };
@@ -48,9 +50,14 @@
 		405B81B01DC23E5300E761BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405B81AF1DC23E5300E761BC /* LoginViewController.swift */; };
 		4067BC371DC3A86A007F9CF9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067BC361DC3A86A007F9CF9 /* Constants.swift */; };
 		4077B1AE1DC6E5710074EB3B /* Designable+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077B1AD1DC6E5710074EB3B /* Designable+Button.swift */; };
+		40890E291DF7B6DE00DCE931 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40890E281DF7B6DE00DCE931 /* MenuTableViewController.swift */; };
+		40890E2E1DF7D05900DCE931 /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40890E2D1DF7D05900DCE931 /* CustomSearchController.swift */; };
+		40890E301DF7D07300DCE931 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40890E2F1DF7D07300DCE931 /* CustomSearchBar.swift */; };
+		40890E321DF7D0AD00DCE931 /* FoodSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40890E311DF7D0AD00DCE931 /* FoodSearchViewController.swift */; };
 		40984AD81DC4A15100BA7D6B /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40984AD71DC4A15100BA7D6B /* UIView+IBInspectable.swift */; };
 		40A1117C1DD1A88F0096E78D /* RadioButtonWithSubtext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1117B1DD1A88F0096E78D /* RadioButtonWithSubtext.swift */; };
 		40AC566B1DD8A78600F30F0A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AC566A1DD8A78600F30F0A /* UserService.swift */; };
+		40C44C831DF7D65800B37AC2 /* foods_min.json in Resources */ = {isa = PBXBuildFile; fileRef = 40C44C821DF7D65800B37AC2 /* foods_min.json */; };
 		40CCDF391DBBBCFB00D00981 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */; };
 		40CCDF3E1DBBBCFB00D00981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CCDF3C1DBBBCFB00D00981 /* Main.storyboard */; };
 		40CCDF411DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF3F1DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld */; };
@@ -65,9 +72,11 @@
 
 /* Begin PBXFileReference section */
 		19BAB43CBDE0133D41A98100 /* Pods_DairyNutrition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DairyNutrition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		400726351DF7155000908A3D /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
+		400726371DF7197100908A3D /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		4008EE791DD2111A007B3F8B /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		4008EE7B1DD235B6007B3F8B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		4008EE7D1DD23BCD007B3F8B /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		4008EE7D1DD23BCD007B3F8B /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		4008EE7F1DD23D4E007B3F8B /* DairyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DairyAPI.swift; sourceTree = "<group>"; };
 		4009F0241DD2CF2D00293A5A /* SignUpWithUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpWithUserInfoViewController.swift; sourceTree = "<group>"; };
 		401138EF1DD6D55800983310 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -105,9 +114,14 @@
 		405B81AF1DC23E5300E761BC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4067BC361DC3A86A007F9CF9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4077B1AD1DC6E5710074EB3B /* Designable+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Designable+Button.swift"; sourceTree = "<group>"; };
+		40890E281DF7B6DE00DCE931 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		40890E2D1DF7D05900DCE931 /* CustomSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
+		40890E2F1DF7D07300DCE931 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		40890E311DF7D0AD00DCE931 /* FoodSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodSearchViewController.swift; sourceTree = "<group>"; };
 		40984AD71DC4A15100BA7D6B /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		40A1117B1DD1A88F0096E78D /* RadioButtonWithSubtext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonWithSubtext.swift; sourceTree = "<group>"; };
 		40AC566A1DD8A78600F30F0A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		40C44C821DF7D65800B37AC2 /* foods_min.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = foods_min.json; sourceTree = "<group>"; };
 		40CCDF351DBBBCFB00D00981 /* DairyNutrition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DairyNutrition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CCDF381DBBBCFB00D00981 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40CCDF3D1DBBBCFB00D00981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +165,15 @@
 				AA1D1685F7FD76F5B3A8F4CD /* Pods-DairyNutrition.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		40086D531DF69051003B4BA1 /* DashboardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				400726351DF7155000908A3D /* DashboardTableViewController.swift */,
+				400726371DF7197100908A3D /* DashboardViewController.swift */,
+			);
+			path = DashboardViewController;
 			sourceTree = "<group>";
 		};
 		405B81AE1DC23E2B00E761BC /* LoginViewController */ = {
@@ -203,6 +226,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		40890E2C1DF7CF9300DCE931 /* FoodSearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40890E2F1DF7D07300DCE931 /* CustomSearchBar.swift */,
+				40890E2D1DF7D05900DCE931 /* CustomSearchController.swift */,
+				40890E311DF7D0AD00DCE931 /* FoodSearchViewController.swift */,
+			);
+			path = FoodSearchViewController;
+			sourceTree = "<group>";
+		};
 		4097A6951DBF42920092E8C8 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,7 +247,7 @@
 		40B745811DBBC081006BABE4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4008EE7D1DD23BCD007B3F8B /* AccountManager.swift */,
+				4008EE7D1DD23BCD007B3F8B /* Shared.swift */,
 				4008EE7B1DD235B6007B3F8B /* User.swift */,
 			);
 			path = Model;
@@ -251,6 +284,9 @@
 			children = (
 				405B81AC1DC23DFF00E761BC /* MainViewController.swift */,
 				40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */,
+				40890E281DF7B6DE00DCE931 /* MenuTableViewController.swift */,
+				40086D531DF69051003B4BA1 /* DashboardViewController */,
+				40890E2C1DF7CF9300DCE931 /* FoodSearchViewController */,
 				405B81AE1DC23E2B00E761BC /* LoginViewController */,
 				40FD9C721DD0227300436D5D /* SignUpViewController */,
 			);
@@ -289,6 +325,7 @@
 				40CCDF441DBBBCFB00D00981 /* LaunchScreen.storyboard */,
 				40D55EFE1DBDA88400FA033C /* Assets.xcassets */,
 				4058B9AC1DBBC46300024143 /* Images.xcassets */,
+				40C44C821DF7D65800B37AC2 /* foods_min.json */,
 				40CCDF471DBBBCFB00D00981 /* Info.plist */,
 				40CCDF3F1DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld */,
 			);
@@ -375,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C44C831DF7D65800B37AC2 /* foods_min.json in Resources */,
 				40CCDF461DBBBCFB00D00981 /* LaunchScreen.storyboard in Resources */,
 				4058B9AD1DBBC46300024143 /* Images.xcassets in Resources */,
 				40D55EFF1DBDA88400FA033C /* Assets.xcassets in Resources */,
@@ -443,18 +481,21 @@
 				40984AD81DC4A15100BA7D6B /* UIView+IBInspectable.swift in Sources */,
 				405B818A1DC2295000E761BC /* UIColorExtensions.swift in Sources */,
 				401138F41DD7148200983310 /* UserDefaults+Key.swift in Sources */,
+				40890E2E1DF7D05900DCE931 /* CustomSearchController.swift in Sources */,
 				405B81AD1DC23DFF00E761BC /* MainViewController.swift in Sources */,
 				405965B81DD0AD1500EB5F19 /* SignUpFourthViewController.swift in Sources */,
 				405B81A41DC22D1100E761BC /* BlockLongPress.swift in Sources */,
 				4008EE7A1DD2111A007B3F8B /* StringExtensions.swift in Sources */,
 				405B81991DC22BD800E761BC /* CGFloatExtensions.swift in Sources */,
 				405965B41DD0ACE100EB5F19 /* SignUpSecondViewController.swift in Sources */,
+				40890E291DF7B6DE00DCE931 /* MenuTableViewController.swift in Sources */,
 				405B81901DC229A900E761BC /* UIStoryBoardExtensions.swift in Sources */,
 				405B81921DC229C200E761BC /* UIViewControllerExtensions.swift in Sources */,
 				4009F0251DD2CF2D00293A5A /* SignUpWithUserInfoViewController.swift in Sources */,
 				40F6932B1DCF6F4200A4D75B /* WelcomeViewController.swift in Sources */,
 				405965BF1DD0AD4B00EB5F19 /* SignUpSeventhViewController.swift in Sources */,
 				405B81A91DC22D1100E761BC /* EZSwiftFunctions.swift in Sources */,
+				400726381DF7197100908A3D /* DashboardViewController.swift in Sources */,
 				40AC566B1DD8A78600F30F0A /* UserService.swift in Sources */,
 				405965B61DD0ACF100EB5F19 /* SignUpThirdViewController.swift in Sources */,
 				405B81A31DC22D1100E761BC /* BlockButton.swift in Sources */,
@@ -467,12 +508,13 @@
 				4067BC371DC3A86A007F9CF9 /* Constants.swift in Sources */,
 				4008EE801DD23D4E007B3F8B /* DairyAPI.swift in Sources */,
 				405B81881DC2293400E761BC /* UIAlertControllerExtensions.swift in Sources */,
+				400726361DF7155000908A3D /* DashboardTableViewController.swift in Sources */,
 				40CCDF411DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld in Sources */,
 				405B81961DC22BC700E761BC /* CGRectExtensions.swift in Sources */,
 				405965BA1DD0AD2600EB5F19 /* SignUpFifthViewController.swift in Sources */,
 				40FD9C741DD022BA00436D5D /* SignUpViewController.swift in Sources */,
 				405B81861DC2291300E761BC /* NSDictionaryExtensions.swift in Sources */,
-				4008EE7E1DD23BCD007B3F8B /* AccountManager.swift in Sources */,
+				4008EE7E1DD23BCD007B3F8B /* Shared.swift in Sources */,
 				405B81941DC22ABD00E761BC /* UIViewExtensions.swift in Sources */,
 				405B81A61DC22D1100E761BC /* BlockPinch.swift in Sources */,
 				405B81A21DC22D1100E761BC /* ArrayExtensions.swift in Sources */,
@@ -483,6 +525,8 @@
 				4077B1AE1DC6E5710074EB3B /* Designable+Button.swift in Sources */,
 				405B818C1DC2297300E761BC /* UIImageExtensions.swift in Sources */,
 				40CCDF391DBBBCFB00D00981 /* AppDelegate.swift in Sources */,
+				40890E301DF7D07300DCE931 /* CustomSearchBar.swift in Sources */,
+				40890E321DF7D0AD00DCE931 /* FoodSearchViewController.swift in Sources */,
 				405B818E1DC2298500E761BC /* UIImageViewExtensions.swift in Sources */,
 				405B81A71DC22D1100E761BC /* BlockSwipe.swift in Sources */,
 				405B81801DC2288200E761BC /* DictionaryExtensions.swift in Sources */,

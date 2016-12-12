@@ -44,7 +44,7 @@ class User: NSObject, NSCoding {
     let gender: UserGender?
     let activityLevel: UserActivityLevel?
     
-    let weight: Double?
+    var weight: Double?
     let weightUnit: UserWeightUnit?
     
     let height: String?
@@ -103,7 +103,6 @@ class User: NSObject, NSCoding {
     }
     
     public func encode(with aCoder: NSCoder) {
-        print("Encoding")
         aCoder.encode(fullName, forKey: "fullName")
         aCoder.encode(email, forKey: "email")
         
@@ -140,5 +139,55 @@ class User: NSObject, NSCoding {
         self.height = json["user"]["height"].stringValue
         self.heightUnit = UserHeightUnit(rawValue: json["user"]["heightUnit"].intValue)
         self.dob = json["user"]["dateOfBirth"].stringValue
+    }
+    
+    public func calculateCalories() -> Int {
+        var bmr: Double = 0
+        var activity: Double = 0
+        var mass: Double = 0
+        var height: Double = 0
+        //var age: Int = 20
+        
+        
+        if self.activityLevel == UserActivityLevel.sedentary {
+            activity = 1.2
+        } else if activityLevel == UserActivityLevel.lowActive {
+            activity = 1.375
+        } else if activityLevel == UserActivityLevel.active {
+            activity = 1.55
+        } else {
+            activity = 1.725
+        }
+        
+        if self.weightUnit == UserWeightUnit.lb {
+            mass = self.weight! / 0.45
+        } else {
+            mass = self.weight!
+        }
+        
+        if self.heightUnit == UserHeightUnit.inch {
+            height = Double(self.height!)! / 0.45
+        } else {
+            height = Double(self.height!)!
+        }
+        
+        if self.gender == UserGender.male {
+            bmr = (10.0 * mass) + (6.25 * height) - (5.0 * 20) + 5
+        } else {
+            bmr = (10.0 * mass) + (6.25 * height) - (5.0 * 20) - 161
+        }
+        
+        
+        if self.weightGoalType == UserWeightGoal.weightLoss {
+            return Int(round((bmr * activity - 500) / 100.0)) * 100
+        } else if self.weightGoalType == UserWeightGoal.weightGain {
+            return Int(round((bmr * activity + 500) / 100.0)) * 100
+        }
+        
+        return Int(round((bmr * activity) / 100.0)) * 100
+    }
+    
+    public func setWeight(weight: Double) {
+        self.weight = weight
     }
 }

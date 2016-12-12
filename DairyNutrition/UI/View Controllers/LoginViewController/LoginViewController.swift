@@ -16,15 +16,18 @@ class LoginViewController : MainViewController {
     
     @IBOutlet var signInButton: DesignableButton!
     
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: PasswordTextField!
     
-    public override func didSetCurrentUser() {
-        super.didSetCurrentUser()
+    func didSetCurrentUser() {
         
-        Defaults[.loggedUser] = super.currentUser
+        Defaults[.loggedUser] = Shared.shared.currentUser
         Defaults[.loggedIn] = true
+        
+        if Defaults[.loggedIn]! {
+            super.presentVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "BaseViewController"))!)
+        }
     }
     
     // MARK: View Life Cycle
@@ -34,7 +37,6 @@ class LoginViewController : MainViewController {
         
         // Hides keyboard when Tapped Arround
         super.hideKeyboardWhenTappedAround()
-        Defaults.removeAll()
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,48 +53,23 @@ class LoginViewController : MainViewController {
         // Loading Test
         super.showLoading()
         
-        UserService().loginUser("qweqweqw", password: "qweqweqe") { user in
-            
+        if !(emailTextField.text?.isEmail)! {
             super.stopLoading()
-            if Defaults[.loggedUser] != nil {
-                super.showAlert(title: "Logged in as", text: "\(Defaults[.loggedUser]?.fullName)")
-            } else {
-
-
-            if user != nil {
-                print(user?.weightGoal)
+            super.showAlert(title: "Warning", text: "Email is not available")
+        } else {
+            UserService().loginUser(emailTextField.text!, password: passwordTextField.text!) { user in
                 
-                super.currentUser = user
-                super.showAlert(title: "Loggin success", text: "success")
-            }
-            super.showAlert(title: "Error", text: "Error")
+                super.stopLoading()
+                
+                if user != nil {
+                    Shared.shared.currentUser = user
+                    self.didSetCurrentUser()
+
+                } else {
+                    super.showAlert(title: "Error", text: "There is some error")
+                }
             }
         }
-        
-//        let authenticatedAPI = AuthenticatedDairyAPI()
-        
-//        authenticatedAPI.loginUser("qweq", password: "qweqweqw") { user in
-//            if user != nil {
-//                super.showAlert(title: "done", text: "fck yeah")
-//            }
-//            super.showAlert(title: "done", text: "shit")
-//        }
-        
-//        AccountManager.defaultAccountManager.login(email: "qwerqwerqwe", password: "qwerqwerq") { success in
-//            
-//            if success {
-//                super.stopLoading()
-//                super.showAlert(title: "Successful", text: "Logged in")
-//            }
-//            
-//            super.stopLoading()
-//            super.showAlert(title: "noo", text: "noo")
-//        }
-        
-        //perform(#selector(stopLoading),
-        //    with: nil,
-        //    afterDelay: 2.5)
-        
         
         // Alert Test
         //let contButton = UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: nil)

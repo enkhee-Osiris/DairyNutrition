@@ -1,6 +1,8 @@
 PODS:
   - Alamofire (4.0.1)
   - DropDown (2)
+  - FSCalendar (2.6.0)
+  - KYDrawerController (2.0.1)
   - NVActivityIndicatorView (3.0)
   - PasswordTextField (1.0.4)
   - SwiftyJSON (3.1.1)
@@ -9,6 +11,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - DropDown (~> 2)
+  - FSCalendar (~> 2.6)
+  - KYDrawerController (~> 2.0)
   - NVActivityIndicatorView (~> 3.0)
   - PasswordTextField (~> 1.0)
   - SwiftyJSON (~> 3.1)
@@ -17,11 +21,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
+  FSCalendar: c00fa5f4c3ec343ee6f7b804ae19322e9898bb84
+  KYDrawerController: b716cfa5730dc2133a67efcfc28b3b5a2cff6101
   NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
   PasswordTextField: 1fccb24dd769cfc963f1f60cb9fece692ad40530
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: 166117b39d2161a7a7c42b806631d3b228089010
+PODFILE CHECKSUM: 0b664a953a5db84eefe2adcdae0228dcf8456a8f
 
 COCOAPODS: 1.1.1

@@ -79,11 +79,11 @@ class SignUpWithUserInfoViewController: MainViewController {
                                    heightUnit: heightUnit!,
                                    dateOfBirth: dateOfBirth!)
                 
-                UserService().registerUser(user: regUser, password: passwordTextField.text!) { success in
+                UserService().registerUser(user: regUser, password: passwordTextField.text!) { success, msg in
                     if success {
-                        super.showAlert(title: "Amjilttai burtgelee", text: "Nice")
+                        super.showAlert(title: "Successful", text: msg)
                     } else {
-                        super.showAlert(title: "Burtguuleh aldaa", text: "Aldaa")
+                        super.showAlert(title: "Error", text: msg)
                     }
                 }
             }

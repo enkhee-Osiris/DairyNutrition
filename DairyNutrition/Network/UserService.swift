@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 public struct UserService {
     public init() {}
@@ -36,7 +37,7 @@ public struct UserService {
         )
     }
     
-    func registerUser(user: User, password: String, completion: @escaping (_ success: Bool) -> ()) {
+    func registerUser(user: User, password: String, completion: @escaping (_ success: Bool, _ msg: String) -> ()) {
         var parameters: JSONObject = ["password": password as AnyObject]
         parameters["email"] = user.email as AnyObject
         parameters["lastName"] = user.fullName as AnyObject
@@ -47,28 +48,23 @@ public struct UserService {
         parameters["gender"] = user.gender?.rawValue as AnyObject
         parameters["activityLevel"] = user.activityLevel?.rawValue as AnyObject
         parameters["weight"] = user.weight as AnyObject
-        parameters["weightUnit"] = user.weightUnit as AnyObject
+        parameters["weightUnit"] = user.weightUnit?.rawValue as AnyObject
         parameters["height"] = user.height as AnyObject
         parameters["heightUnit"] = user.heightUnit?.rawValue as AnyObject
         parameters["dateOfBirth"] = user.dob as AnyObject
         
         DairyAPI.sharedInstance.post("register/", parameters: parameters,
-             success: { json in
-                
-                do {
-                    let data =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
-                    // first of all convert json to the data
-                    let convertedString: String = String(data: data, encoding: String.Encoding.utf8)!
-                    // the data will be converted to the string
-                    print(convertedString)
-                    
-                } catch let error {
-                    print(error)
+            success: { json in
+
+                let json = JSON(json)
+
+                if json["error"].boolValue {
+                    completion(false, json["msg"].stringValue)
+                } else {
+                    completion(true, json["msg"].stringValue)
                 }
-                completion(true)
-                
             }, failure: { error in
-                completion(false)
+                completion(false, "Error")
             }
         )
     }

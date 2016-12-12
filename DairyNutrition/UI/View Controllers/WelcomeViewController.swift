@@ -9,6 +9,7 @@
 import UIKit
 import AVKit
 import AVFoundation
+import SwiftyUserDefaults
 
 class WelcomeViewController : MainViewController {
 
@@ -32,6 +33,16 @@ class WelcomeViewController : MainViewController {
     override func viewDidAppear(_ animated: Bool) {
         self.player?.play()
         super.addNotificationObserver(NSNotification.Name.AVPlayerItemDidPlayToEndTime.rawValue, selector: #selector(self.loopVideo))
+        
+        if let logged = Defaults[.loggedIn] {
+            if logged == true {
+                Shared.shared.currentUser = Defaults[.loggedUser]
+                self.player?.pause()
+                super.removeNotificationObserver()
+                
+                super.presentVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "BaseViewController"))!)
+            }
+        }
     }
     
     override open func viewWillDisappear(_ animated: Bool) {
