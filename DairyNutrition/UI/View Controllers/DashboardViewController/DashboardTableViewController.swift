@@ -46,8 +46,12 @@ class DashboardTableViewController: UITableViewController {
     @IBAction func addFoodButtonTapped(_ sender: Any) {
         self.delegate?.pushAddFoodViewController()
     }
+    @IBAction func addExerciseButtonTapped(_ sender: Any) {
+        self.delegate?.pushAddExerciseViewController()
+    }
 }
 
 protocol ContainerViewControllerProtocol {
     func pushAddFoodViewController()
+    func pushAddExerciseViewController()
 }

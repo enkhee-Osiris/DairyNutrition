@@ -64,6 +64,8 @@
 		40CCDF411DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF3F1DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld */; };
 		40CCDF461DBBBCFB00D00981 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CCDF441DBBBCFB00D00981 /* LaunchScreen.storyboard */; };
 		40D55EFF1DBDA88400FA033C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D55EFE1DBDA88400FA033C /* Assets.xcassets */; };
+		40E5499B1DFFE51F00D3563A /* AddExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E5499A1DFFE51F00D3563A /* AddExerciseViewController.swift */; };
+		40E5499D1DFFEF4B00D3563A /* FoodsTableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E5499C1DFFEF4B00D3563A /* FoodsTableSectionHeader.xib */; };
 		40F6932B1DCF6F4200A4D75B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */; };
 		40F6932F1DCF79FC00A4D75B /* moments.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40F6932E1DCF79FC00A4D75B /* moments.mp4 */; };
 		40FD9C741DD022BA00436D5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD9C731DD022BA00436D5D /* SignUpViewController.swift */; };
@@ -131,6 +133,8 @@
 		40CCDF451DBBBCFB00D00981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40CCDF471DBBBCFB00D00981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40D55EFE1DBDA88400FA033C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40E5499A1DFFE51F00D3563A /* AddExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseViewController.swift; sourceTree = "<group>"; };
+		40E5499C1DFFEF4B00D3563A /* FoodsTableSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodsTableSectionHeader.xib; sourceTree = "<group>"; };
 		40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		40F6932E1DCF79FC00A4D75B /* moments.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = moments.mp4; sourceTree = "<group>"; };
 		40FD9C731DD022BA00436D5D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +289,8 @@
 		40B745851DBBC0E5006BABE4 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				40CCDF3C1DBBBCFB00D00981 /* Main.storyboard */,
+				40E5499C1DFFEF4B00D3563A /* FoodsTableSectionHeader.xib */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 				40890E281DF7B6DE00DCE931 /* MenuTableViewController.swift */,
 				40086D531DF69051003B4BA1 /* DashboardViewController */,
 				4094E6901DFEE2EA0013DEBE /* AddFoodViewController */,
+				40E549991DFFE4D700D3563A /* AddExerciseViewController */,
 				40890E2C1DF7CF9300DCE931 /* FoodSearchViewController */,
 				405B81AE1DC23E2B00E761BC /* LoginViewController */,
 				40FD9C721DD0227300436D5D /* SignUpViewController */,
@@ -332,7 +339,6 @@
 				40B745821DBBC0AA006BABE4 /* Network */,
 				40B745831DBBC0C6006BABE4 /* UI */,
 				40613A4A1DBF3FB500CCB125 /* Extensions */,
-				40CCDF3C1DBBBCFB00D00981 /* Main.storyboard */,
 				40CCDF441DBBBCFB00D00981 /* LaunchScreen.storyboard */,
 				40D55EFE1DBDA88400FA033C /* Assets.xcassets */,
 				4058B9AC1DBBC46300024143 /* Images.xcassets */,
@@ -341,6 +347,14 @@
 				40CCDF3F1DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld */,
 			);
 			path = DairyNutrition;
+			sourceTree = "<group>";
+		};
+		40E549991DFFE4D700D3563A /* AddExerciseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40E5499A1DFFE51F00D3563A /* AddExerciseViewController.swift */,
+			);
+			path = AddExerciseViewController;
 			sourceTree = "<group>";
 		};
 		40FD9C721DD0227300436D5D /* SignUpViewController */ = {
@@ -390,7 +404,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Osiris;
 				TargetAttributes = {
 					40CCDF341DBBBCFB00D00981 = {
@@ -429,6 +443,7 @@
 				40D55EFF1DBDA88400FA033C /* Assets.xcassets in Resources */,
 				40F6932F1DCF79FC00A4D75B /* moments.mp4 in Resources */,
 				40CCDF3E1DBBBCFB00D00981 /* Main.storyboard in Resources */,
+				40E5499D1DFFEF4B00D3563A /* FoodsTableSectionHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +512,7 @@
 				405965B81DD0AD1500EB5F19 /* SignUpFourthViewController.swift in Sources */,
 				405B81A41DC22D1100E761BC /* BlockLongPress.swift in Sources */,
 				4008EE7A1DD2111A007B3F8B /* StringExtensions.swift in Sources */,
+				40E5499B1DFFE51F00D3563A /* AddExerciseViewController.swift in Sources */,
 				405B81991DC22BD800E761BC /* CGFloatExtensions.swift in Sources */,
 				405965B41DD0ACE100EB5F19 /* SignUpSecondViewController.swift in Sources */,
 				40890E291DF7B6DE00DCE931 /* MenuTableViewController.swift in Sources */,
@@ -554,6 +570,7 @@
 				40CCDF3D1DBBBCFB00D00981 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		40CCDF441DBBBCFB00D00981 /* LaunchScreen.storyboard */ = {

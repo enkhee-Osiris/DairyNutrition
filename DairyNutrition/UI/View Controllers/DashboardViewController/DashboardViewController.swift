@@ -73,6 +73,9 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
     func pushAddFoodViewController() {
         super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "AddFoodViewController"))!)
     }
+    func pushAddExerciseViewController() {
+        super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "AddExerciseViewController"))!)
+    }
     
     func closeMenu() {
         if let drawerController = navigationController?.parent as? KYDrawerController {
