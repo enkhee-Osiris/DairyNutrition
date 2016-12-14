@@ -13,5 +13,7 @@ final class Shared {
     static let shared = Shared()
     
     var currentUser : User!
-    var isLoggedIn   : Bool!
+    var isLoggedIn: Bool!
+    
+    var selectedDate: Date!
 }

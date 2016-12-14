@@ -56,6 +56,7 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date) {
         print("Selected date \(self.formatter.string(from: date))")
+        Shared.shared.selectedDate = date
     }
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {

@@ -10,6 +10,8 @@ import UIKit
 
 class CustomSearchBar: UISearchBar {
     
+//    var delegate: CustomSearchControllerDelegate!
+    
     var preferredFont: UIFont!
     
     var preferredTextColor: UIColor!

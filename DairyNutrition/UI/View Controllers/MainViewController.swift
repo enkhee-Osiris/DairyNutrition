@@ -78,8 +78,6 @@ class MainViewController : UIViewController, NVActivityIndicatorViewable {
                                                                         NSFontAttributeName: UIFont.systemFont(ofSize: 20, weight: UIFontWeightLight)]
         
         
-        
-        
         let backImage = UIImage(named: "back-inverted-icon")
         self.navigationController?.navigationBar.backIndicatorImage = backImage?.resizeWithHeight(26.0)
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage?.resizeWithHeight(26.0)

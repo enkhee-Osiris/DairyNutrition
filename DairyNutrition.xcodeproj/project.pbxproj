@@ -52,7 +52,6 @@
 		4067BC371DC3A86A007F9CF9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067BC361DC3A86A007F9CF9 /* Constants.swift */; };
 		4077B1AE1DC6E5710074EB3B /* Designable+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4077B1AD1DC6E5710074EB3B /* Designable+Button.swift */; };
 		40890E291DF7B6DE00DCE931 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40890E281DF7B6DE00DCE931 /* MenuTableViewController.swift */; };
-		40890E2E1DF7D05900DCE931 /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40890E2D1DF7D05900DCE931 /* CustomSearchController.swift */; };
 		40890E301DF7D07300DCE931 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40890E2F1DF7D07300DCE931 /* CustomSearchBar.swift */; };
 		40890E321DF7D0AD00DCE931 /* FoodSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40890E311DF7D0AD00DCE931 /* FoodSearchViewController.swift */; };
 		4094E6921DFEE3120013DEBE /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4094E6911DFEE3120013DEBE /* AddFoodViewController.swift */; };
@@ -120,7 +119,6 @@
 		4067BC361DC3A86A007F9CF9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4077B1AD1DC6E5710074EB3B /* Designable+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Designable+Button.swift"; sourceTree = "<group>"; };
 		40890E281DF7B6DE00DCE931 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		40890E2D1DF7D05900DCE931 /* CustomSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
 		40890E2F1DF7D07300DCE931 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		40890E311DF7D0AD00DCE931 /* FoodSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodSearchViewController.swift; sourceTree = "<group>"; };
 		4094E6911DFEE3120013DEBE /* AddFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				40890E2F1DF7D07300DCE931 /* CustomSearchBar.swift */,
-				40890E2D1DF7D05900DCE931 /* CustomSearchController.swift */,
 				40890E311DF7D0AD00DCE931 /* FoodSearchViewController.swift */,
 			);
 			path = FoodSearchViewController;
@@ -510,7 +507,6 @@
 				40984AD81DC4A15100BA7D6B /* UIView+IBInspectable.swift in Sources */,
 				405B818A1DC2295000E761BC /* UIColorExtensions.swift in Sources */,
 				401138F41DD7148200983310 /* UserDefaults+Key.swift in Sources */,
-				40890E2E1DF7D05900DCE931 /* CustomSearchController.swift in Sources */,
 				405B81AD1DC23DFF00E761BC /* MainViewController.swift in Sources */,
 				405965B81DD0AD1500EB5F19 /* SignUpFourthViewController.swift in Sources */,
 				405B81A41DC22D1100E761BC /* BlockLongPress.swift in Sources */,

@@ -1096,6 +1096,7 @@
                     </view>
                     <connections>
                         <outlet property="tblSearchResults" destination="kCX-vl-O2s" id="ZOH-tQ-kce"/>
+                        <outlet property="tblSearchResultsTopConstraint" destination="ogm-33-6Yh" id="2ke-0u-XhQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbF-xS-BjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2069,6 +2070,6 @@
         <image name="weight-track-icon" width="23" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VGZ-wb-XEU"/>
+        <segue reference="G4M-xD-vHR"/>
     </inferredMetricsTieBreakers>
 </document>

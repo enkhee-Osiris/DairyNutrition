@@ -9,11 +9,13 @@
 import UIKit
 import SwiftyJSON
 
-class FoodSearchViewController: MainViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate, CustomSearchControllerDelegate {
+class FoodSearchViewController: MainViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
     // MARK: Properties
     
     @IBOutlet weak var tblSearchResults: UITableView!
+    
+    var customSearchBar: CustomSearchBar!
     
     var dataArray = [String]()
     
@@ -21,7 +23,7 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
     
     var shouldShowSearchResults = false
     
-    var customSearchController: CustomSearchController!
+    @IBOutlet weak var tblSearchResultsTopConstraint: NSLayoutConstraint!
     
     // MARK: View Life Cycle
     
@@ -31,13 +33,13 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
         tblSearchResults.delegate = self
         tblSearchResults.dataSource = self
         
-        super.showLoading()
-        
-        self.configureCustomSearchController()
+        self.configureCustomSearchBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        super.showLoading()
         
         self.loadListOfCountries(){ finished in
             if finished {
@@ -110,28 +112,53 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
         completion(true)
     }
     
-    func configureCustomSearchController() {
-        self.customSearchController = CustomSearchController(searchResultsController: self, searchBarFrame: CGRect(x: 0.0, y: 0.0, width: tblSearchResults.frame.size.width, height: 50.0), searchBarFont: UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightLight), searchBarTextColor: UIColor.white, searchBarTintColor: pinkColor!)
+    func configureCustomSearchBar() {
         
-        self.customSearchController.customSearchBar.placeholder = "Search food..."
-        tblSearchResults.tableHeaderView = customSearchController.customSearchBar
+        self.configureSearchBar(CGRect(x: 0.0,
+                                       y: 0.0,
+                                       width: self.view.frame.size.width,
+                                       height: 50.0),
+                                font: UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightLight),
+                                textColor: UIColor.white,
+                                bgColor: pinkColor!)
         
-        self.customSearchController.customDelegate = self
+        customSearchBar.placeholder = "Search food..."
+        //tblSearchResults.tableHeaderView = customSearchController.customSearchBar
+        
+        self.view.addSubview(self.customSearchBar)
+        self.tblSearchResultsTopConstraint.constant = 50.0
     }
 
+    func configureSearchBar(_ frame: CGRect, font: UIFont, textColor: UIColor, bgColor: UIColor) {
+        customSearchBar = CustomSearchBar(frame: frame, font: font , textColor: textColor)
+        
+        customSearchBar.barTintColor = bgColor
+        customSearchBar.tintColor = textColor
+        customSearchBar.showsBookmarkButton = false
+        customSearchBar.showsCancelButton = true
+        
+        customSearchBar.delegate = self
+    }
+    
     // MARK: UISearchBarDelegate functions
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        shouldShowSearchResults = true
-        tblSearchResults.reloadData()
+        self.didStartSearching()
     }
     
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        shouldShowSearchResults = false
-        tblSearchResults.reloadData()
+        self.didTapOnCancelButton()
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.didTapOnSearchButton()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.didChangeSearchText(searchText)
+    }
+
     
     // MARK: UISearchResultsUpdating delegate function
     
@@ -149,7 +176,8 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
         
         // Reload the tableview.
         tblSearchResults.reloadData()
-    }
+    }   
+
     
     // MARK: CustomSearchControllerDelegate functions
     
