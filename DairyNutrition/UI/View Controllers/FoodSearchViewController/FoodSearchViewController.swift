@@ -111,7 +111,7 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
     }
     
     func configureCustomSearchController() {
-        self.customSearchController = CustomSearchController(searchResultsController: self, searchBarFrame: CGRect(x: 0.0, y: 0.0, width: tblSearchResults.frame.size.width, height: 50.0), searchBarFont: UIFont(name: "Futura", size: 16.0)!, searchBarTextColor: UIColor.white, searchBarTintColor: pinkColor!)
+        self.customSearchController = CustomSearchController(searchResultsController: self, searchBarFrame: CGRect(x: 0.0, y: 0.0, width: tblSearchResults.frame.size.width, height: 50.0), searchBarFont: UIFont.systemFont(ofSize: 16.0, weight: UIFontWeightLight), searchBarTextColor: UIColor.white, searchBarTintColor: pinkColor!)
         
         self.customSearchController.customSearchBar.placeholder = "Search food..."
         tblSearchResults.tableHeaderView = customSearchController.customSearchBar

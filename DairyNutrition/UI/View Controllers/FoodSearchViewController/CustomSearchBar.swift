@@ -34,6 +34,20 @@ class CustomSearchBar: UISearchBar {
             
             // Set the background color of the search field.
             searchField.backgroundColor = barTintColor
+            
+            // PlaceHolder color
+            let textFieldInsideSearchBarLabel = searchField.value(forKey: "placeholderLabel") as? UILabel
+            textFieldInsideSearchBarLabel?.textColor = UIColor.white
+            
+            // Search glass icon color
+            let glassIconView = searchField.leftView as! UIImageView
+            glassIconView.image = glassIconView.image?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            glassIconView.tintColor = UIColor.white
+            
+            // ClearButton color
+            let clearButton = searchField.value(forKey: "clearButton") as! UIButton
+            clearButton.setImage(clearButton.imageView?.image?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: .normal)
+            clearButton.tintColor = UIColor.white
         }
         
         let startPoint = CGPoint(x: 0.0, y: frame.size.height)

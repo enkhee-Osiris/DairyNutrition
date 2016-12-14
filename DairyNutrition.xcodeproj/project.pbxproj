@@ -18,6 +18,7 @@
 		401138F01DD6D55800983310 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401138EF1DD6D55800983310 /* Reachability.swift */; };
 		401138F21DD6EE2000983310 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401138F11DD6EE2000983310 /* Notification+Name.swift */; };
 		401138F41DD7148200983310 /* UserDefaults+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401138F31DD7148200983310 /* UserDefaults+Key.swift */; };
+		40306D331E0107A100FC9970 /* FoodsTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40306D321E0107A100FC9970 /* FoodsTableSectionHeaderView.swift */; };
 		4058B9AD1DBBC46300024143 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4058B9AC1DBBC46300024143 /* Images.xcassets */; };
 		405965B41DD0ACE100EB5F19 /* SignUpSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405965B31DD0ACE100EB5F19 /* SignUpSecondViewController.swift */; };
 		405965B61DD0ACF100EB5F19 /* SignUpThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405965B51DD0ACF100EB5F19 /* SignUpThirdViewController.swift */; };
@@ -85,6 +86,7 @@
 		401138EF1DD6D55800983310 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		401138F11DD6EE2000983310 /* Notification+Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		401138F31DD7148200983310 /* UserDefaults+Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Key.swift"; sourceTree = "<group>"; };
+		40306D321E0107A100FC9970 /* FoodsTableSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodsTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		4058B9AC1DBBC46300024143 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		405965B31DD0ACE100EB5F19 /* SignUpSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSecondViewController.swift; sourceTree = "<group>"; };
 		405965B51DD0ACF100EB5F19 /* SignUpThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpThirdViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				4094E6911DFEE3120013DEBE /* AddFoodViewController.swift */,
+				40306D321E0107A100FC9970 /* FoodsTableSectionHeaderView.swift */,
 			);
 			path = AddFoodViewController;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				40FD9C741DD022BA00436D5D /* SignUpViewController.swift in Sources */,
 				405B81861DC2291300E761BC /* NSDictionaryExtensions.swift in Sources */,
 				4008EE7E1DD23BCD007B3F8B /* Shared.swift in Sources */,
+				40306D331E0107A100FC9970 /* FoodsTableSectionHeaderView.swift in Sources */,
 				405B81941DC22ABD00E761BC /* UIViewExtensions.swift in Sources */,
 				405B81A61DC22D1100E761BC /* BlockPinch.swift in Sources */,
 				405B81A21DC22D1100E761BC /* ArrayExtensions.swift in Sources */,
