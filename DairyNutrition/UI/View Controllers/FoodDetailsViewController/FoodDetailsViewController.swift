@@ -77,7 +77,7 @@ class FoodDetailsViewController: MainViewController, UIPickerViewDelegate, UIPic
             case "Carbohydrate, by difference":
                 foodCarbLabel.text = "\(Double(nutrient.value!)! * Double(count))"
             default:
-                foodCaloriesLabel.text = "\(Int(nutrient.value!)! * count))"
+                foodCaloriesLabel.text = "\(Int(nutrient.value!)! * count)"
             }
         }
     }
@@ -118,6 +118,42 @@ class FoodDetailsViewController: MainViewController, UIPickerViewDelegate, UIPic
     // MARK: IBActions
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        print("button tapped")
+        saveFood(self.food!)
+    }
+}
+
+extension FoodDetailsViewController {
+    fileprivate func saveFood(_ food: Food) {
+        persistentContainer.performBackgroundTask { backgroundContext in
+            let foodToSave = backgroundContext.foods.create()
+            
+            let identifier = UUID().uuidString
+            if foodToSave.isInserted {
+                foodToSave.identifier = identifier
+            }
+            
+            for nutrition in (self.food?.nutrients)! {
+                self.addNutrient(withIdentifier: identifier, nutrient: nutrition)
+            }
+            
+            foodToSave.date = Shared.shared.selectedDate
+            foodToSave.name = food.name!
+            foodToSave.quantity = Int16(self.count)
+            
+            try! backgroundContext.save()
+        }
+    }
+    
+    func addNutrient(withIdentifier identifier: String, nutrient: Nutrient) {
+        persistentContainer.performBackgroundTask { backgroundContext in
+            let coreNutrient = backgroundContext.nutrients.create()
+            
+            coreNutrient.food = backgroundContext.foods.first{ $0.identifier == identifier }!
+            coreNutrient.name = nutrient.name!
+            coreNutrient.value = Double(nutrient.value!)!
+            coreNutrient.unit = nutrient.unit!
+            
+            try! backgroundContext.save()
+        }
     }
 }

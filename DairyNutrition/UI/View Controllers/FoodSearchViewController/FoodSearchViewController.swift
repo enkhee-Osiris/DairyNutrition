@@ -71,14 +71,17 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let indexPath = indexPath as NSIndexPath
+        let row = indexPath.row
+        
         let foodInfoViewController = UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "FoodDetailsViewController") as! FoodDetailsViewController
         
         if shouldShowSearchResults {
-            let index = dataArray.indexes(of: filteredArray[indexPath.row])
+            let index = dataArray.indexes(of: filteredArray[row])
             foodInfoViewController.foodId = jsonObj[index]["id"].string!
         }
         else {
-            foodInfoViewController.foodId = jsonObj[indexPath.row]["id"].string!
+            foodInfoViewController.foodId = jsonObj[row]["id"].string!
         }
         
         super.pushVC(foodInfoViewController)
@@ -97,11 +100,14 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath)
         
+        let indexPath = indexPath as NSIndexPath
+        let row = indexPath.row
+        
         if shouldShowSearchResults {
-            cell.textLabel?.text = filteredArray[indexPath.row]
+            cell.textLabel?.text = filteredArray[row]
         }
         else {
-            cell.textLabel?.text = dataArray[indexPath.row]
+            cell.textLabel?.text = dataArray[row]
         }
         
         return cell

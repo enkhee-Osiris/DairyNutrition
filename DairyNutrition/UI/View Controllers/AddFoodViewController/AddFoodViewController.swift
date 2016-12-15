@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
+import AlecrimCoreData
 
-class AddFoodViewController: MainViewController, FoodsTableProtocol {
+
+class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: Properties
     
@@ -26,6 +29,13 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol {
     
     @IBOutlet weak var foodsTableView: UITableView!
     
+    fileprivate private(set) lazy var fetchRequestController: FetchRequestController<CoreFood> = {
+        let query = persistentContainer.viewContext.foods.filter { $0.date == Date() }.orderBy{ $0.date }
+        
+        
+        return query.toFetchRequestController()
+    }()
+    
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
@@ -35,6 +45,8 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol {
         self.navigationItem.title = "Add Food"
 
         self.setupFoodsTableView()
+        
+        self.fetchRequestController.bind(to: self.foodsTableView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,5 +64,25 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol {
     
     func pushFoodSearchViewController() {
         super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "FoodSearchViewController"))!)
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return self.fetchRequestController.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.fetchRequestController.numberOfObjects(inSection: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = foodsTableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath)
+        let food = self.fetchRequestController.object(at: indexPath)
+        
+        cell.textLabel!.text = food.name
+        cell.detailTextLabel!.text = "\(Int(food.nutrients.filter{ $0.name == "Energy" }[0].value))"
+        
+        return cell
     }
 }

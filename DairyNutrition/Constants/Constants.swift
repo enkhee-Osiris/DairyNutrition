@@ -8,6 +8,10 @@
 
 import Foundation
 import UIKit
+import AlecrimCoreData
+
+// the global persistent container
+let persistentContainer = PersistentContainer(name: "DairyNutrition")
 
 // Constants are here
 let pinkColor = UIColor(hexString: "#FF1A50")

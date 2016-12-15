@@ -51,7 +51,10 @@ class MenuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        switch indexPath.row {
+        let index = indexPath as NSIndexPath
+        let row = index.row
+        
+        switch row {
         case 1:
             if let drawerController = parent as? KYDrawerController {
                 drawerController.setDrawerState(.closed, animated: true)

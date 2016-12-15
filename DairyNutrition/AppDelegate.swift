@@ -8,7 +8,8 @@
 
 import UIKit
 import CoreData
-import KYDrawerController
+
+// the global persistent container
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

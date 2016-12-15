@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AlecrimCoreData.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DropDown.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,6 +72,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>421170F3DEC968511AE379093B2551FE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>43F633B3903DE39E43C0B694E1C46B06</key>
 		<dict>
 			<key>primary</key>
@@ -82,12 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8B92175F51E2529704157B48BEB96D2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9F766ADB76A46AB732825D44C4BAAABF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA4821724901F1908E4735A1218EE668</key>
+		<key>A7FD880A4DD84D8B6FBC8AB733EE2E89</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +112,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E98831698B739F6D157288680570F35D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FB94EBE45931A59F86F049F4488308E5</key>
+		<key>E9470F8E6865BEAC2D1FFF214B8D4ED6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
