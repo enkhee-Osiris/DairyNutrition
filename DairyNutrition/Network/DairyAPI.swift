@@ -30,7 +30,7 @@ final class DairyAPI {
         var path = ""
         
         if endpoint == "nutrients" {
-            path = foodApiBaseURL + endpoint
+            path = foodApiBaseURL + endpoint + "/?api_key=" + foodApiKey
         } else {
             path = apiBaseURL + endpoint
         }
@@ -39,10 +39,8 @@ final class DairyAPI {
         Alamofire.request(path, method: method, parameters: parameters, encoding: encoding)
             .responseJSON { response in
                 
-            print(response.result)
             switch response.result {
             case .success(let JSON):
-                print("Success")
                 success(JSON as AnyObject)
             case .failure(let error):
                 
