@@ -597,3 +597,11 @@ extension UIView {
         return parentView.rootView()
     }
 }
+
+extension UIView {
+    
+    func removeLayerAnimationsRecursively() {
+        layer.removeAllAnimations()
+        subviews.forEach { $0.removeLayerAnimationsRecursively() }
+    }
+}

@@ -8,13 +8,22 @@
 
 import UIKit
 
-class AddExerciseViewController: MainViewController {
+class AddExerciseViewController: MainViewController, ExercisesTableProtocol{
 
+    // MARK: Properties
+    
+    @IBOutlet weak var caloriesBurnedLabel: UILabel!
+    
+    @IBOutlet weak var exercisesTable: UITableView!
+    
+    // MARK: View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Add Exercise"
+        self.setupExercisesTableView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,15 +31,17 @@ class AddExerciseViewController: MainViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: Custom functions
+    
+    func setupExercisesTableView() {
+        let view = (Bundle.main.loadNibNamed("ExercisesTableSectionHeader", owner: self, options: nil)?[0] as? ExercisesTableSectionHeaderView)
+        exercisesTable.tableHeaderView = view
+        view?.delegate = self
     }
-    */
-
+    
+    func pushExercisesSearchViewController() {
+        print("push exercise selection")
+        //super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "ExerciseAdd"))!)
+    }
 }

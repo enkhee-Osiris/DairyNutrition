@@ -13,6 +13,12 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
     
     // MARK: Properties
     
+    private let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        return formatter
+    }()
+    
     @IBOutlet weak var tblSearchResults: UITableView!
     
     var customSearchBar: CustomSearchBar!
@@ -25,6 +31,8 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var tblSearchResultsTopConstraint: NSLayoutConstraint!
     
+    var jsonObj: JSON! = [:]
+    
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
@@ -34,12 +42,13 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
         tblSearchResults.dataSource = self
         
         self.configureCustomSearchBar()
+        self.navigationItem.title =  "\(self.formatter.string(from: Shared.shared.selectedDate))"
+        
+        super.showLoading()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        super.showLoading()
         
         self.loadListOfCountries(){ finished in
             if finished {
@@ -47,17 +56,31 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
                 super.stopLoading()
             }
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    
     // MARK: UITableView Delegate and Datasource functions
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if shouldShowSearchResults {
+            let index = dataArray.indexes(of: filteredArray[indexPath.row])
+            //print(filteredArray[indexPath.row])
+            print(jsonObj[index]["id"].string!)
+        }
+        else {
+//            let index = jsonObj.arrayValue.map({$0["name"].string!}).indexes(of: dataArray[indexPath.row])
+            //print(filteredArray[indexPath.row])
+            print(jsonObj[indexPath.row]["id"].string!)
+//            print(dataArray[indexPath.row])
+        }
     }
     
     
@@ -88,6 +111,8 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
         return 60.0
     }
     
+    
+
     // MARK: Custom functions
     
     func loadListOfCountries(completion: @escaping (_ finished: Bool) -> ()) {
@@ -97,7 +122,7 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
         if let path = Bundle.main.path(forResource: "foods_min", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                let jsonObj = JSON(data: data)
+                jsonObj = JSON(data: data)
                 if jsonObj != JSON.null {
                     dataArray = jsonObj.arrayValue.map({$0["name"].string!})
                 } else {
@@ -140,12 +165,13 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
         customSearchBar.delegate = self
     }
     
+    
+    
     // MARK: UISearchBarDelegate functions
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.didStartSearching()
     }
-    
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.didTapOnCancelButton()
@@ -160,6 +186,7 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
     }
 
     
+    
     // MARK: UISearchResultsUpdating delegate function
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -168,10 +195,10 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
         }
         
         // Filter the data array and get only those countries that match the search text.
-        filteredArray = dataArray.filter({ (country) -> Bool in
-            let countryText:NSString = country as NSString
+        filteredArray = dataArray.filter({ (food) -> Bool in
+            let foodText:NSString = food as NSString
             
-            return (countryText.range(of: searchString, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+            return (foodText.range(of: searchString, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
         })
         
         // Reload the tableview.
@@ -179,11 +206,13 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
     }   
 
     
+    
     // MARK: CustomSearchControllerDelegate functions
     
     func didStartSearching() {
         shouldShowSearchResults = true
         tblSearchResults.reloadData()
+        customSearchBar.resignFirstResponder()
     }
     
     
@@ -197,16 +226,17 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
     
     func didTapOnCancelButton() {
         shouldShowSearchResults = false
+        customSearchBar.resignFirstResponder()
         tblSearchResults.reloadData()
     }
     
     
     func didChangeSearchText(_ searchText: String) {
         // Filter the data array and get only those countries that match the search text.
-        filteredArray = dataArray.filter({ (country) -> Bool in
-            let countryText: NSString = country as NSString
+        filteredArray = dataArray.filter({ (food) -> Bool in
+            let foodText: NSString = food as NSString
             
-            return (countryText.range(of: searchText, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+            return (foodText.range(of: searchText, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
         })
         
         // Reload the tableview.

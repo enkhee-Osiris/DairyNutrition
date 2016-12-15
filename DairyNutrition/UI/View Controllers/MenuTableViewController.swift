@@ -20,7 +20,6 @@ class MenuTableViewController: UITableViewController {
     
     @IBOutlet weak var userAvatarImageView: UIImageView!
     
-    
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
@@ -59,10 +58,15 @@ class MenuTableViewController: UITableViewController {
             }
         case 2:
             // Food dairy
-            print("Food dairy")
+            //super.pushVC((UIStoryboard.mainStoryboard?.instantiateVC(AddFoodViewController.self))!)
+//            if let drawerController = parent as? KYDrawerController {
+//                drawerController.mainViewController.pushVC((UIStoryboard.mainStoryboard?.instantiateVC(AddFoodViewController.self))!)
+//            }
+            super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "AddFoodViewController"))!)
         case 3:
             // Exercise dairy
-            print("Exercise")
+//            super.pushVC((UIStoryboard.mainStoryboard?.instantiateVC(AddExerciseViewController.self))!)
+            super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "AddExerciseViewController"))!)
         case 4:
             // weight Tracker
             print("Weight tracker")

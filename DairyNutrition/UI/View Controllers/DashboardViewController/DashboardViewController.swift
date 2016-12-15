@@ -90,6 +90,17 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
         }
     }
     
+    func menuTableViewController(menuIndex: Int) {
+        switch menuIndex {
+        case 2:
+            self.pushAddFoodViewController()
+        case 3:
+            self.pushAddExerciseViewController()
+        default:
+            print("Menu default")
+        }
+    }
+    
     // MARK: ContainerViewControllerProtocol
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -103,6 +114,5 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
     func menuButtonTapped(_ sender: UIBarButtonItem) {
         self.openMenu()
     }
-    
-
 }
+

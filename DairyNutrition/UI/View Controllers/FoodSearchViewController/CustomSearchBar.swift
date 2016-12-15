@@ -33,6 +33,7 @@ class CustomSearchBar: UISearchBar {
             // Set the font and text color of the search field.
             searchField.font = preferredFont
             searchField.textColor = preferredTextColor
+            searchField.textAlignment = .left
             
             // Set the background color of the search field.
             searchField.backgroundColor = barTintColor
@@ -40,6 +41,7 @@ class CustomSearchBar: UISearchBar {
             // PlaceHolder color
             let textFieldInsideSearchBarLabel = searchField.value(forKey: "placeholderLabel") as? UILabel
             textFieldInsideSearchBarLabel?.textColor = UIColor.white
+            textFieldInsideSearchBarLabel?.textAlignment = .left
             
             // Search glass icon color
             let glassIconView = searchField.leftView as! UIImageView
@@ -60,11 +62,11 @@ class CustomSearchBar: UISearchBar {
         
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
-        shapeLayer.strokeColor = preferredTextColor.cgColor
-        shapeLayer.lineWidth = 2.5
+        shapeLayer.strokeColor = UIColor.init(gray: 40).cgColor
+        shapeLayer.lineWidth = 0
         
         layer.addSublayer(shapeLayer)
-        
+//
         super.draw(rect)
     }
     

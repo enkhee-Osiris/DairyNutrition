@@ -27,8 +27,16 @@ final class DairyAPI {
     // Perform a request on an API endpoint using Alamofire.
     fileprivate func request(_ endpoint: String, method: HTTPMethod, encoding: Alamofire.ParameterEncoding, parameters: [String: AnyObject]?,
                       success: @escaping (AnyObject) -> Void, failure: @escaping (NSError) -> Void) {
-        print("Starting \(method) \(apiBaseURL + endpoint) (\(parameters ?? [:]))")
-        Alamofire.request(apiBaseURL + endpoint, method: method, parameters: parameters, encoding: encoding)
+        var path = ""
+        
+        if endpoint == "nutrients" {
+            path = foodApiBaseURL + endpoint
+        } else {
+            path = apiBaseURL + endpoint
+        }
+        
+        print("Starting \(method) \(path) (\(parameters ?? [:]))")
+        Alamofire.request(path, method: method, parameters: parameters, encoding: encoding)
             .responseJSON { response in
                 
             print(response.result)

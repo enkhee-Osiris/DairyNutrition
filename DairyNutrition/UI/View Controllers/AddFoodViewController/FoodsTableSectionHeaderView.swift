@@ -10,13 +10,14 @@ import UIKit
 
 class FoodsTableSectionHeader: UIView {
 
-    var delegate: FoodsTableViewProtocol?
+    var delegate: FoodsTableProtocol?
 
     @IBAction func addFoodButtonTapped(_ sender: UIButton) {
         self.delegate?.pushFoodSearchViewController()
     }
 
 }
-protocol FoodsTableViewProtocol {
+
+protocol FoodsTableProtocol {
     func pushFoodSearchViewController()
 }

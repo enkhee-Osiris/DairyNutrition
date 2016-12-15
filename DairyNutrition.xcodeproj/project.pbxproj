@@ -63,9 +63,15 @@
 		40CCDF3E1DBBBCFB00D00981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CCDF3C1DBBBCFB00D00981 /* Main.storyboard */; };
 		40CCDF411DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40CCDF3F1DBBBCFB00D00981 /* DairyNutrition.xcdatamodeld */; };
 		40CCDF461DBBBCFB00D00981 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CCDF441DBBBCFB00D00981 /* LaunchScreen.storyboard */; };
+		40D159781E018CE9008220AC /* ExercisesTableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40D159771E018CE9008220AC /* ExercisesTableSectionHeader.xib */; };
+		40D1597A1E018E9B008220AC /* ExercisesTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D159791E018E9B008220AC /* ExercisesTableSectionHeaderView.swift */; };
 		40D55EFF1DBDA88400FA033C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D55EFE1DBDA88400FA033C /* Assets.xcassets */; };
 		40E5499B1DFFE51F00D3563A /* AddExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E5499A1DFFE51F00D3563A /* AddExerciseViewController.swift */; };
 		40E5499D1DFFEF4B00D3563A /* FoodsTableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E5499C1DFFEF4B00D3563A /* FoodsTableSectionHeader.xib */; };
+		40F196D71E025CF600CD0317 /* FoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F196D61E025CF600CD0317 /* FoodService.swift */; };
+		40F196D91E0262F500CD0317 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F196D81E0262F500CD0317 /* Food.swift */; };
+		40F196DB1E02630200CD0317 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F196DA1E02630200CD0317 /* Nutrient.swift */; };
+		40F196E01E02752700CD0317 /* FoodDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F196DF1E02752700CD0317 /* FoodDetailsViewController.swift */; };
 		40F6932B1DCF6F4200A4D75B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */; };
 		40F6932F1DCF79FC00A4D75B /* moments.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40F6932E1DCF79FC00A4D75B /* moments.mp4 */; };
 		40FD9C741DD022BA00436D5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD9C731DD022BA00436D5D /* SignUpViewController.swift */; };
@@ -132,9 +138,15 @@
 		40CCDF401DBBBCFB00D00981 /* DairyNutrition.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DairyNutrition.xcdatamodel; sourceTree = "<group>"; };
 		40CCDF451DBBBCFB00D00981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40CCDF471DBBBCFB00D00981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40D159771E018CE9008220AC /* ExercisesTableSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExercisesTableSectionHeader.xib; sourceTree = "<group>"; };
+		40D159791E018E9B008220AC /* ExercisesTableSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		40D55EFE1DBDA88400FA033C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40E5499A1DFFE51F00D3563A /* AddExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseViewController.swift; sourceTree = "<group>"; };
 		40E5499C1DFFEF4B00D3563A /* FoodsTableSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodsTableSectionHeader.xib; sourceTree = "<group>"; };
+		40F196D61E025CF600CD0317 /* FoodService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodService.swift; sourceTree = "<group>"; };
+		40F196D81E0262F500CD0317 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		40F196DA1E02630200CD0317 /* Nutrient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
+		40F196DF1E02752700CD0317 /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
 		40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		40F6932E1DCF79FC00A4D75B /* moments.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = moments.mp4; sourceTree = "<group>"; };
 		40FD9C731DD022BA00436D5D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +275,8 @@
 			children = (
 				4008EE7D1DD23BCD007B3F8B /* Shared.swift */,
 				4008EE7B1DD235B6007B3F8B /* User.swift */,
+				40F196D81E0262F500CD0317 /* Food.swift */,
+				40F196DA1E02630200CD0317 /* Nutrient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +287,7 @@
 				4008EE7F1DD23D4E007B3F8B /* DairyAPI.swift */,
 				401138EF1DD6D55800983310 /* Reachability.swift */,
 				40AC566A1DD8A78600F30F0A /* UserService.swift */,
+				40F196D61E025CF600CD0317 /* FoodService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -291,6 +306,7 @@
 			children = (
 				40CCDF3C1DBBBCFB00D00981 /* Main.storyboard */,
 				40E5499C1DFFEF4B00D3563A /* FoodsTableSectionHeader.xib */,
+				40D159771E018CE9008220AC /* ExercisesTableSectionHeader.xib */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -305,6 +321,7 @@
 				4094E6901DFEE2EA0013DEBE /* AddFoodViewController */,
 				40E549991DFFE4D700D3563A /* AddExerciseViewController */,
 				40890E2C1DF7CF9300DCE931 /* FoodSearchViewController */,
+				40F196DE1E0274E800CD0317 /* FoodDetailsViewController */,
 				405B81AE1DC23E2B00E761BC /* LoginViewController */,
 				40FD9C721DD0227300436D5D /* SignUpViewController */,
 			);
@@ -353,8 +370,17 @@
 			isa = PBXGroup;
 			children = (
 				40E5499A1DFFE51F00D3563A /* AddExerciseViewController.swift */,
+				40D159791E018E9B008220AC /* ExercisesTableSectionHeaderView.swift */,
 			);
 			path = AddExerciseViewController;
+			sourceTree = "<group>";
+		};
+		40F196DE1E0274E800CD0317 /* FoodDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40F196DF1E02752700CD0317 /* FoodDetailsViewController.swift */,
+			);
+			path = FoodDetailsViewController;
 			sourceTree = "<group>";
 		};
 		40FD9C721DD0227300436D5D /* SignUpViewController */ = {
@@ -438,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40C44C831DF7D65800B37AC2 /* foods_min.json in Resources */,
+				40D159781E018CE9008220AC /* ExercisesTableSectionHeader.xib in Resources */,
 				40CCDF461DBBBCFB00D00981 /* LaunchScreen.storyboard in Resources */,
 				4058B9AD1DBBC46300024143 /* Images.xcassets in Resources */,
 				40D55EFF1DBDA88400FA033C /* Assets.xcassets in Resources */,
@@ -514,6 +541,7 @@
 				40E5499B1DFFE51F00D3563A /* AddExerciseViewController.swift in Sources */,
 				405B81991DC22BD800E761BC /* CGFloatExtensions.swift in Sources */,
 				405965B41DD0ACE100EB5F19 /* SignUpSecondViewController.swift in Sources */,
+				40F196D71E025CF600CD0317 /* FoodService.swift in Sources */,
 				40890E291DF7B6DE00DCE931 /* MenuTableViewController.swift in Sources */,
 				405B81901DC229A900E761BC /* UIStoryBoardExtensions.swift in Sources */,
 				405B81921DC229C200E761BC /* UIViewControllerExtensions.swift in Sources */,
@@ -527,12 +555,14 @@
 				405965B61DD0ACF100EB5F19 /* SignUpThirdViewController.swift in Sources */,
 				405B81A31DC22D1100E761BC /* BlockButton.swift in Sources */,
 				40FD9C761DD022CE00436D5D /* SignUpPageViewController.swift in Sources */,
+				40F196DB1E02630200CD0317 /* Nutrient.swift in Sources */,
 				405965BC1DD0AD3200EB5F19 /* SignUpSixthViewController.swift in Sources */,
 				40A1117C1DD1A88F0096E78D /* RadioButtonWithSubtext.swift in Sources */,
 				4008EE7C1DD235B6007B3F8B /* User.swift in Sources */,
 				40FD9C781DD0387900436D5D /* SignUpFirstViewController.swift in Sources */,
 				401138F01DD6D55800983310 /* Reachability.swift in Sources */,
 				4067BC371DC3A86A007F9CF9 /* Constants.swift in Sources */,
+				40F196D91E0262F500CD0317 /* Food.swift in Sources */,
 				4008EE801DD23D4E007B3F8B /* DairyAPI.swift in Sources */,
 				405B81881DC2293400E761BC /* UIAlertControllerExtensions.swift in Sources */,
 				400726361DF7155000908A3D /* DashboardTableViewController.swift in Sources */,
@@ -542,10 +572,12 @@
 				40FD9C741DD022BA00436D5D /* SignUpViewController.swift in Sources */,
 				405B81861DC2291300E761BC /* NSDictionaryExtensions.swift in Sources */,
 				4008EE7E1DD23BCD007B3F8B /* Shared.swift in Sources */,
+				40D1597A1E018E9B008220AC /* ExercisesTableSectionHeaderView.swift in Sources */,
 				40306D331E0107A100FC9970 /* FoodsTableSectionHeaderView.swift in Sources */,
 				405B81941DC22ABD00E761BC /* UIViewExtensions.swift in Sources */,
 				405B81A61DC22D1100E761BC /* BlockPinch.swift in Sources */,
 				405B81A21DC22D1100E761BC /* ArrayExtensions.swift in Sources */,
+				40F196E01E02752700CD0317 /* FoodDetailsViewController.swift in Sources */,
 				405B81AB1DC22D6A00E761BC /* UIApplicationExtensions.swift in Sources */,
 				401138F21DD6EE2000983310 /* Notification+Name.swift in Sources */,
 				405B81A81DC22D1100E761BC /* BlockTap.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddFoodViewController: MainViewController, FoodsTableViewProtocol {
+class AddFoodViewController: MainViewController, FoodsTableProtocol {
 
     // MARK: Properties
     
@@ -33,18 +33,7 @@ class AddFoodViewController: MainViewController, FoodsTableViewProtocol {
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Add Food"
-        
-//        let header: UIView = UIView() //recast your view as a UITableViewHeaderFooterView
-//        header.frame = CGRect(x: 0, y: 0, width: foodsTableView.fs_width, height: 44)
-//        header.backgroundColor = UIColor.green //make the background color light blue
-//        
-//        //header.textLabel?.textColor = UIColor.white //make the text white
-//        header.alpha = 0.5 //make the header transparent
-//        
-//
-//        
-        //foodsTableView.tableHeaderView = UINib(nibName: "FoodsTableSectionHeader", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
-        
+
         self.setupFoodsTableView()
     }
 
@@ -64,15 +53,4 @@ class AddFoodViewController: MainViewController, FoodsTableViewProtocol {
     func pushFoodSearchViewController() {
         super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "FoodSearchViewController"))!)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
