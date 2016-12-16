@@ -25,11 +25,14 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
     
     @IBOutlet weak var caloriesLabel: UILabel!
     
-    @IBOutlet weak var caloriesRemainingLabel: UILabel!
-    
     @IBOutlet weak var foodsTableView: UITableView!
     
     @IBOutlet weak var foodsTableHeightContraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var caloriesRemainingLabel: UILabel!
+    
+    @IBOutlet weak var caloriesConsumedLabel: UILabel!
+    
     
     fileprivate private(set) lazy var fetchRequestController: FetchRequestController<CoreFood> = {
         let query = persistentContainer.viewContext.foods.filter{ $0.date == Shared.shared.selectedDate }.orderBy{ $0.name }
@@ -64,9 +67,12 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
         let height = (CGFloat(count) * rowHeight) + headerHeight
         self.foodsTableHeightContraint.constant = height
         
-        let array = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Energy" }.flatMap{ $0.value }}
-        print(sumArray(array: array!))
-        //print("\([1...3].reduce(0.0, combine: +))")
+        
+//        print("\([1...3].reduce(0.0, combine: +))")
+        
+        //print(self.fetchRequestController.fetchedObjects?.map{ $0.nutrients.map{ $0.name } })
+        
+        self.setupNutrients()
     }
     
     override func didReceiveMemoryWarning() {
@@ -87,12 +93,43 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
         super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "FoodSearchViewController"))!)
     }
     
-    func sumArray(array: [Double]) -> Double{
+    func sumArray(array: [Double], quantity: [Int16]) -> Double{
         var sum = 0.0
-        for element in array {
-            sum += element
+        for (index, element) in array.enumerated() {
+            sum += (element * Double(quantity[index]))
         }
         return sum
+    }
+    
+    func setupNutrients(){
+        
+        if((self.fetchRequestController.fetchedObjects?.count)! > 0) {
+            let calories = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Energy" }.flatMap{ $0.value }}
+            
+            let quantity = self.fetchRequestController.fetchedObjects?.flatMap{ $0.quantity }
+
+            let caloriesUnit = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Energy" }}[0].unit
+            caloriesLabel.text = "\(Int(sumArray(array: calories!, quantity: quantity!))) \(caloriesUnit!)"
+            
+            let fat = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Total lipid (fat)" }.flatMap{ $0.value }}
+            let fatUnit = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Total lipid (fat)" }}[0].unit
+            fatLabel.text = "\(sumArray(array: fat!, quantity: quantity!))\(fatUnit!)"
+            
+            let protein = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Protein" }.flatMap{ $0.value }}
+            let proteinUnit = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Protein" }}[0].unit
+            protLabel.text = "\(sumArray(array: protein!, quantity: quantity!))\(proteinUnit!)"
+            
+            let carb = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Carbohydrate, by difference" }.flatMap{ $0.value }}
+            let carbUnit = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Carbohydrate, by difference" }}[0].unit
+            crabsLabel.text = "\(sumArray(array: carb!, quantity: quantity!))\(carbUnit!)"
+            
+//            let protein = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Protein" }.flatMap{ $0.value }}
+//            let proteinUnit = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Protein" }}[0].unit
+            caloriesRemainingLabel.text = "\(Shared.shared.currentUser.calculateCalories() - Int(sumArray(array: calories!, quantity: quantity!)))\(caloriesUnit!)"
+            
+            caloriesConsumedLabel.text = "\(Int(sumArray(array: calories!, quantity: quantity!)))\(caloriesUnit!)"
+        }
+    
     }
 }
     // MARK: - UITableViewDelegate
@@ -112,7 +149,9 @@ extension AddFoodViewController {
         let food = self.fetchRequestController.object(at: indexPath)
         
         cell.textLabel!.text = food.name
-        cell.detailTextLabel!.text = "\(Int(food.nutrients.filter{ $0.name == "Energy" }[0].value))"
+        let calories = Int(food.nutrients.filter{ $0.name == "Energy" }[0].value)
+        let quantity = Int(food.quantity)
+        cell.detailTextLabel!.text = "\(calories * quantity)"
         
         return cell
     }

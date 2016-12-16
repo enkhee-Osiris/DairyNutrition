@@ -55,6 +55,8 @@ class MenuTableViewController: UITableViewController {
         let row = index.row
         
         switch row {
+        case 0:
+            return
         case 1:
             if let drawerController = parent as? KYDrawerController {
                 drawerController.setDrawerState(.closed, animated: true)

@@ -25,7 +25,7 @@ class SignUpViewController : MainViewController {
     var textsOfLabel = [
         "What is your goal?",
         "How much weight would you like to gain?",
-        "What is your gendvarr",
+        "What is your gender",
         "What is your activity level?",
         "What is your current weight?",
         "What is your height?",

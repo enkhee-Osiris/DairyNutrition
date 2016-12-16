@@ -78,9 +78,6 @@
 		40F196E91E02CD4900CD0317 /* Nutrient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F196E81E02CD4900CD0317 /* Nutrient+CoreDataClass.swift */; };
 		40F196EB1E02CD5400CD0317 /* Nutrient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F196EA1E02CD5400CD0317 /* Nutrient+CoreDataProperties.swift */; };
 		40F196ED1E02CD6D00CD0317 /* Nutrient+ AlecrimCoreDataAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F196EC1E02CD6D00CD0317 /* Nutrient+ AlecrimCoreDataAttributes.swift */; };
-		40F196EF1E02E5DF00CD0317 /* Entity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F196EE1E02E5DF00CD0317 /* Entity+CoreDataClass.swift */; };
-		40F196F11E02E5EA00CD0317 /* Entity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F196F01E02E5EA00CD0317 /* Entity+CoreDataProperties.swift */; };
-		40F196F31E02E5F400CD0317 /* Entity+AlecrimCoreDataAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F196F21E02E5F400CD0317 /* Entity+AlecrimCoreDataAttributes.swift */; };
 		40F6932B1DCF6F4200A4D75B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */; };
 		40F6932F1DCF79FC00A4D75B /* moments.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 40F6932E1DCF79FC00A4D75B /* moments.mp4 */; };
 		40FD9C741DD022BA00436D5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD9C731DD022BA00436D5D /* SignUpViewController.swift */; };
@@ -162,9 +159,6 @@
 		40F196E81E02CD4900CD0317 /* Nutrient+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nutrient+CoreDataClass.swift"; sourceTree = "<group>"; };
 		40F196EA1E02CD5400CD0317 /* Nutrient+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nutrient+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		40F196EC1E02CD6D00CD0317 /* Nutrient+ AlecrimCoreDataAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nutrient+ AlecrimCoreDataAttributes.swift"; sourceTree = "<group>"; };
-		40F196EE1E02E5DF00CD0317 /* Entity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		40F196F01E02E5EA00CD0317 /* Entity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		40F196F21E02E5F400CD0317 /* Entity+AlecrimCoreDataAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entity+AlecrimCoreDataAttributes.swift"; sourceTree = "<group>"; };
 		40F6932A1DCF6F4200A4D75B /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		40F6932E1DCF79FC00A4D75B /* moments.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = moments.mp4; sourceTree = "<group>"; };
 		40FD9C731DD022BA00436D5D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -405,9 +399,6 @@
 		40F196E11E02C25E00CD0317 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				40F196EE1E02E5DF00CD0317 /* Entity+CoreDataClass.swift */,
-				40F196F01E02E5EA00CD0317 /* Entity+CoreDataProperties.swift */,
-				40F196F21E02E5F400CD0317 /* Entity+AlecrimCoreDataAttributes.swift */,
 				40F196E21E02C98300CD0317 /* Food+CoreDataClass.swift */,
 				40F196E41E02C99500CD0317 /* Food+CoreDataProperties.swift */,
 				40F196E61E02C9A600CD0317 /* Food+ AlecrimCoreDataAttributes.swift */,
@@ -574,7 +565,6 @@
 				405B81A41DC22D1100E761BC /* BlockLongPress.swift in Sources */,
 				4008EE7A1DD2111A007B3F8B /* StringExtensions.swift in Sources */,
 				40E5499B1DFFE51F00D3563A /* AddExerciseViewController.swift in Sources */,
-				40F196F31E02E5F400CD0317 /* Entity+AlecrimCoreDataAttributes.swift in Sources */,
 				405B81991DC22BD800E761BC /* CGFloatExtensions.swift in Sources */,
 				405965B41DD0ACE100EB5F19 /* SignUpSecondViewController.swift in Sources */,
 				40F196D71E025CF600CD0317 /* FoodService.swift in Sources */,
@@ -587,7 +577,6 @@
 				405B81A91DC22D1100E761BC /* EZSwiftFunctions.swift in Sources */,
 				400726381DF7197100908A3D /* DashboardViewController.swift in Sources */,
 				4094E6921DFEE3120013DEBE /* AddFoodViewController.swift in Sources */,
-				40F196EF1E02E5DF00CD0317 /* Entity+CoreDataClass.swift in Sources */,
 				40AC566B1DD8A78600F30F0A /* UserService.swift in Sources */,
 				405965B61DD0ACF100EB5F19 /* SignUpThirdViewController.swift in Sources */,
 				405B81A31DC22D1100E761BC /* BlockButton.swift in Sources */,
@@ -616,7 +605,6 @@
 				405B81A61DC22D1100E761BC /* BlockPinch.swift in Sources */,
 				405B81A21DC22D1100E761BC /* ArrayExtensions.swift in Sources */,
 				40F196E01E02752700CD0317 /* FoodDetailsViewController.swift in Sources */,
-				40F196F11E02E5EA00CD0317 /* Entity+CoreDataProperties.swift in Sources */,
 				405B81AB1DC22D6A00E761BC /* UIApplicationExtensions.swift in Sources */,
 				40F196E91E02CD4900CD0317 /* Nutrient+CoreDataClass.swift in Sources */,
 				40F196EB1E02CD5400CD0317 /* Nutrient+CoreDataProperties.swift in Sources */,

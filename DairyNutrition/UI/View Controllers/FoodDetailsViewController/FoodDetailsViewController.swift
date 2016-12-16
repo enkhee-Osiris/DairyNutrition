@@ -55,6 +55,7 @@ class FoodDetailsViewController: MainViewController, UIPickerViewDelegate, UIPic
                 self.foodMeasurePickerView.reloadAllComponents()
             } else {
                 super.showAlert(title: "Error", text: "There is some error")
+                super.popVC()
             }
         }
     }

@@ -14,12 +14,8 @@
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="food" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreFood" inverseName="nutrients" inverseEntity="CoreFood" syncable="YES"/>
     </entity>
-    <entity name="Entity" representedClassName="Entity" isAbstract="YES" syncable="YES">
-        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <elements>
         <element name="CoreFood" positionX="223" positionY="27" width="128" height="118"/>
         <element name="CoreNutrient" positionX="-20" positionY="27" width="128" height="118"/>
-        <element name="Entity" positionX="-18" positionY="-87" width="128" height="58"/>
     </elements>
 </model>
