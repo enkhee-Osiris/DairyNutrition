@@ -39,7 +39,7 @@ class MainViewController : UIViewController, NVActivityIndicatorViewable {
         stopAnimating()
     }
 
-    func showAlert(title: String, text: String, buttons: NSArray? = nil) {
+    func showAlert(title: String, text: String, buttons: NSArray? = nil, handler: ((UIAlertAction) -> Swift.Void)? = nil) {
         
         // Example of element in buttons
         // UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: nil))
@@ -49,7 +49,7 @@ class MainViewController : UIViewController, NVActivityIndicatorViewable {
         let alert = UIAlertController(title: title, message: text, preferredStyle: UIAlertControllerStyle.alert)
         
         if buttons == nil {
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: handler))
         } else {
         
             // Adding the button actions

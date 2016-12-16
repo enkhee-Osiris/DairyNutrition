@@ -18,6 +18,8 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
     
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     
+    var containerViewViewController: DashboardTableViewController?
+    
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
@@ -49,8 +51,9 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date) {
-        print("Selected date \(formatter.string(from: date))")
         Shared.shared.selectedDate = formatter.string(from: date)
+        
+        containerViewViewController?.setupCalories()
     }
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
@@ -98,9 +101,9 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
     // MARK: ContainerViewControllerProtocol
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let containerViewViewController = segue.destination as! DashboardTableViewController
+        containerViewViewController = segue.destination as? DashboardTableViewController
         
-        containerViewViewController.delegate = self
+        containerViewViewController?.delegate = self
     }
     
     // MARK: - IBActions

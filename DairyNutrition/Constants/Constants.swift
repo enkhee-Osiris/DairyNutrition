@@ -13,6 +13,7 @@ import AlecrimCoreData
 // the global persistent container
 let persistentContainer = PersistentContainer(name: "DairyNutrition")
 
+
 // Constants are here
 let pinkColor = UIColor(hexString: "#FF1A50")
 let grayColor = UIColor(hexString: "#C7C7CD")
@@ -28,3 +29,12 @@ let formatter: DateFormatter = {
     formatter.dateFormat = "MMM d, yyyy"
     return formatter
 }()
+
+func sumArray(array: [Double], quantity: [Int16]) -> Double {
+    var sum = 0.0
+    for (index, element) in array.enumerated() {
+        sum += (element * Double(quantity[index]))
+    }
+    return sum
+}
+

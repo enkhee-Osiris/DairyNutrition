@@ -26,7 +26,7 @@ extension CoreFood {
     
 }
 
-// MARK: - AttributeProtocol extensions
+// MARK: - AttributeProtocol extensionsGenericPersistentContainer
 
 extension AlecrimCoreData.AttributeProtocol where Self.ValueType: CoreFood {
     
@@ -43,8 +43,12 @@ extension AlecrimCoreData.AttributeProtocol where Self.ValueType: CoreFood {
 
 // MARK: - NSManagedObjectContext extensions
 
-extension NSManagedObjectContext {
+extension NSManagedObjectContext  {
     
     var foods: AlecrimCoreData.Table<CoreFood> { return AlecrimCoreData.Table<CoreFood>(context: self) }
     
+}
+
+class DataContext: NSManagedObjectContext {
+    // ...
 }

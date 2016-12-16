@@ -93,21 +93,13 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
         super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "FoodSearchViewController"))!)
     }
     
-    func sumArray(array: [Double], quantity: [Int16]) -> Double{
-        var sum = 0.0
-        for (index, element) in array.enumerated() {
-            sum += (element * Double(quantity[index]))
-        }
-        return sum
-    }
-    
     func setupNutrients(){
         
         if((self.fetchRequestController.fetchedObjects?.count)! > 0) {
-            let calories = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Energy" }.flatMap{ $0.value }}
             
             let quantity = self.fetchRequestController.fetchedObjects?.flatMap{ $0.quantity }
-
+            
+            let calories = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Energy" }.flatMap{ $0.value }}
             let caloriesUnit = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Energy" }}[0].unit
             caloriesLabel.text = "\(Int(sumArray(array: calories!, quantity: quantity!))) \(caloriesUnit!)"
             
@@ -123,11 +115,18 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
             let carbUnit = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Carbohydrate, by difference" }}[0].unit
             crabsLabel.text = "\(sumArray(array: carb!, quantity: quantity!))\(carbUnit!)"
             
-//            let protein = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Protein" }.flatMap{ $0.value }}
-//            let proteinUnit = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Protein" }}[0].unit
-            caloriesRemainingLabel.text = "\(Shared.shared.currentUser.calculateCalories() - Int(sumArray(array: calories!, quantity: quantity!)))\(caloriesUnit!)"
+            let neededCalories = Shared.shared.currentUser.calculateCalories()
+            caloriesRemainingLabel.text = "\(neededCalories - Int(sumArray(array: calories!, quantity: quantity!)))\(caloriesUnit!)"
             
             caloriesConsumedLabel.text = "\(Int(sumArray(array: calories!, quantity: quantity!)))\(caloriesUnit!)"
+            
+            let a = sumArray(array: calories!, quantity: quantity!)
+            
+            print(a)
+            
+            print(Int(a / Double(neededCalories) * 100.0))
+            
+            rdiLabel.text = "\(Int(sumArray(array: calories!, quantity: quantity!) / Double(neededCalories) * 100.0))%"
         }
     
     }

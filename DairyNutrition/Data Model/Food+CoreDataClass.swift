@@ -13,3 +13,4 @@ import CoreData
 final class CoreFood: NSManagedObject {
     
 }
+// Extends the `NSManagedObjectContext ` class to include entity table properties.

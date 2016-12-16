@@ -81,8 +81,12 @@ class SignUpWithUserInfoViewController: MainViewController {
                 
                 UserService().registerUser(user: regUser, password: passwordTextField.text!) { success, msg in
                     if success {
-                        super.showAlert(title: "Successful", text: msg)
-                        super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "LoginViewController"))!)
+                        //super.showAlert(title: "Successful", text: msg, hand)
+                        super.showAlert(title: "Sucessful", text: msg, handler: { (_) -> Void  in
+                            print("qweqweqw")
+                            super.presentVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "LoginViewController"))!)
+                        })
+                    
                     } else {
                         super.showAlert(title: "Error", text: msg)
                     }
