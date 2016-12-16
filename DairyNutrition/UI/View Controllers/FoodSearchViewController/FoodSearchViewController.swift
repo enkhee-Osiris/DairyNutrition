@@ -13,12 +13,6 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
     
     // MARK: Properties
     
-    private let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d, yyyy"
-        return formatter
-    }()
-    
     @IBOutlet weak var tblSearchResults: UITableView!
     
     var customSearchBar: CustomSearchBar!
@@ -42,7 +36,7 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
         tblSearchResults.dataSource = self
         
         self.configureCustomSearchBar()
-        self.navigationItem.title =  "\(self.formatter.string(from: Shared.shared.selectedDate))"
+        self.navigationItem.title =  Shared.shared.selectedDate
         
         super.showLoading()
     }
@@ -219,7 +213,6 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
     func didStartSearching() {
         shouldShowSearchResults = true
         tblSearchResults.reloadData()
-        customSearchBar.resignFirstResponder()
     }
     
     

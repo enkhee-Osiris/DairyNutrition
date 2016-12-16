@@ -14,7 +14,9 @@ import AlecrimCoreData
 
 extension CoreFood {
     
-    static let date =  AlecrimCoreData.Attribute<Date>("date")
+    static let identifier = AlecrimCoreData.Attribute<String>("identifier")
+    
+    static let date =  AlecrimCoreData.Attribute<String>("date")
 
     static let name = AlecrimCoreData.Attribute<String>("name")
     
@@ -28,7 +30,9 @@ extension CoreFood {
 
 extension AlecrimCoreData.AttributeProtocol where Self.ValueType: CoreFood {
     
-    var date: AlecrimCoreData.Attribute<Date> { return AlecrimCoreData.Attribute<Date>("date", self) }
+    var identifier: AlecrimCoreData.Attribute<String> { return AlecrimCoreData.Attribute<String>("identifier", self) }
+    
+    var date: AlecrimCoreData.Attribute<String> { return AlecrimCoreData.Attribute<String>("date", self) }
     
     var name: AlecrimCoreData.Attribute<String> { return AlecrimCoreData.Attribute<String>("name", self) }
     

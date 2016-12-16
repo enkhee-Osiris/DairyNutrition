@@ -11,7 +11,9 @@ import CoreData
 
 extension CoreFood {
     
-    @NSManaged var date: Date
+    @NSManaged var identifier: String
+    
+    @NSManaged var date: String
     
     @NSManaged var name: String
     

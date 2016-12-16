@@ -29,9 +29,12 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
     
     @IBOutlet weak var foodsTableView: UITableView!
     
+    @IBOutlet weak var foodsTableHeightContraint: NSLayoutConstraint!
+    
     fileprivate private(set) lazy var fetchRequestController: FetchRequestController<CoreFood> = {
-        let query = persistentContainer.viewContext.foods.filter { $0.date == Date() }.orderBy{ $0.date }
+        let query = persistentContainer.viewContext.foods.filter{ $0.date == Shared.shared.selectedDate }.orderBy{ $0.name }
         
+        print("\(persistentContainer.viewContext.foods.orderBy{ $0.date }.map{ $0.date })")
         
         return query.toFetchRequestController()
     }()
@@ -44,11 +47,28 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Add Food"
 
-        self.setupFoodsTableView()
+        //self.fetchRequestController.bind(to: self.tableView)
         
         self.fetchRequestController.bind(to: self.foodsTableView)
+        
+        self.setupFoodsTableView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let rowHeight = CGFloat(44)
+        let headerHeight = foodsTableView.sectionHeaderHeight
+        let count = self.fetchRequestController.numberOfObjects(inSection: 0) == 0 ? 1 : self.fetchRequestController.numberOfObjects(inSection: 0)
+        
+        let height = (CGFloat(count) * rowHeight) + headerHeight
+        self.foodsTableHeightContraint.constant = height
+        
+        let array = self.fetchRequestController.fetchedObjects?.flatMap{ $0.nutrients.filter{ $0.name == "Energy" }.flatMap{ $0.value }}
+        print(sumArray(array: array!))
+        //print("\([1...3].reduce(0.0, combine: +))")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,7 +78,8 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
     
     func setupFoodsTableView() {
         let view = (Bundle.main.loadNibNamed("FoodsTableSectionHeader", owner: self, options: nil)?[0] as? FoodsTableSectionHeader)
-        foodsTableView.tableHeaderView = view
+        
+        self.foodsTableView.tableHeaderView = view
         view?.delegate = self
     }
     
@@ -66,8 +87,17 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
         super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "FoodSearchViewController"))!)
     }
     
+    func sumArray(array: [Double]) -> Double{
+        var sum = 0.0
+        for element in array {
+            sum += element
+        }
+        return sum
+    }
+}
     // MARK: - UITableViewDelegate
-    
+
+extension AddFoodViewController {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return self.fetchRequestController.numberOfSections()
     }
@@ -78,6 +108,7 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = foodsTableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath)
+        
         let food = self.fetchRequestController.object(at: indexPath)
         
         cell.textLabel!.text = food.name

@@ -11,6 +11,8 @@ import CoreData
 
 extension CoreNutrient {
     
+    @NSManaged var identifier: String
+    
     @NSManaged var name: String
     
     @NSManaged var unit: String

@@ -22,3 +22,9 @@ let foodApiBaseURL: String = "http://api.nal.usda.gov/ndb/"
 let foodApiKey: String = "F1aPLDn8zX7K0TRlxboPlODCxW8FUZZdbCYTPWD7"
 
 
+// Date Formatter
+let formatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MMM d, yyyy"
+    return formatter
+}()

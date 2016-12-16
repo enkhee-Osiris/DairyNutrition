@@ -18,12 +18,6 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
     
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     
-    private let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        return formatter
-    }()
-    
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
@@ -55,8 +49,8 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date) {
-        print("Selected date \(self.formatter.string(from: date))")
-        Shared.shared.selectedDate = date
+        print("Selected date \(formatter.string(from: date))")
+        Shared.shared.selectedDate = formatter.string(from: date)
     }
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {

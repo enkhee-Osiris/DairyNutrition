@@ -15,5 +15,5 @@ final class Shared {
     var currentUser : User!
     var isLoggedIn: Bool!
     
-    var selectedDate: Date = Date.init()
+    var selectedDate: String = formatter.string(from: Date())
 }

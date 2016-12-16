@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(CoreFood)
-final class CoreFood: Entity {
+final class CoreFood: NSManagedObject {
     
 }

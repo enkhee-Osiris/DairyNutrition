@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlecrimCoreData
 
 class FoodDetailsViewController: MainViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -119,39 +120,35 @@ class FoodDetailsViewController: MainViewController, UIPickerViewDelegate, UIPic
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         saveFood(self.food!)
+        
+        super.showAlert(title: "Food Added", text: "Food has been successfully added")
     }
 }
 
 extension FoodDetailsViewController {
     fileprivate func saveFood(_ food: Food) {
+        
+        let identifier = UUID().uuidString
+        
         persistentContainer.performBackgroundTask { backgroundContext in
             let foodToSave = backgroundContext.foods.create()
             
-            let identifier = UUID().uuidString
             if foodToSave.isInserted {
                 foodToSave.identifier = identifier
-            }
-            
-            for nutrition in (self.food?.nutrients)! {
-                self.addNutrient(withIdentifier: identifier, nutrient: nutrition)
             }
             
             foodToSave.date = Shared.shared.selectedDate
             foodToSave.name = food.name!
             foodToSave.quantity = Int16(self.count)
             
-            try! backgroundContext.save()
-        }
-    }
-    
-    func addNutrient(withIdentifier identifier: String, nutrient: Nutrient) {
-        persistentContainer.performBackgroundTask { backgroundContext in
-            let coreNutrient = backgroundContext.nutrients.create()
-            
-            coreNutrient.food = backgroundContext.foods.first{ $0.identifier == identifier }!
-            coreNutrient.name = nutrient.name!
-            coreNutrient.value = Double(nutrient.value!)!
-            coreNutrient.unit = nutrient.unit!
+            for nutrient in (self.food?.nutrients)! {
+                let coreNutrient = backgroundContext.nutrients.create()
+                
+                coreNutrient.food = foodToSave
+                coreNutrient.name = nutrient.name!
+                coreNutrient.value = Double(nutrient.value!)!
+                coreNutrient.unit = nutrient.unit!
+            }
             
             try! backgroundContext.save()
         }

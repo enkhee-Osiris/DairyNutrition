@@ -14,6 +14,8 @@ import AlecrimCoreData
 
 extension CoreNutrient {
     
+    static let identifier = AlecrimCoreData.Attribute<String>("identifier")
+    
     static let name = AlecrimCoreData.Attribute<String>("name")
     
     static let unit = AlecrimCoreData.Attribute<String>("name")
@@ -26,6 +28,8 @@ extension CoreNutrient {
 // MARK: - AttributeProtocol extensions
 
 extension AlecrimCoreData.AttributeProtocol where Self.ValueType: CoreNutrient {
+    
+    var identifier: AlecrimCoreData.Attribute<String> { return AlecrimCoreData.Attribute<String>("identifier", self) }
     
     var name: AlecrimCoreData.Attribute<String> { return AlecrimCoreData.Attribute<String>("name", self) }
     
