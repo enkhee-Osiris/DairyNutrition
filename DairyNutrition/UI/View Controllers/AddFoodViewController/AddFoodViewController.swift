@@ -37,7 +37,7 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
     fileprivate private(set) lazy var fetchRequestController: FetchRequestController<CoreFood> = {
         let query = persistentContainer.viewContext.foods.filter{ $0.date == Shared.shared.selectedDate }.orderBy{ $0.name }
         
-        print("\(persistentContainer.viewContext.foods.orderBy{ $0.date }.map{ $0.date })")
+        //print("\(persistentContainer.viewContext.foods.orderBy{ $0.date }.map{ $0.date })")
         
         return query.toFetchRequestController()
     }()
@@ -66,11 +66,6 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
         
         let height = (CGFloat(count) * rowHeight) + headerHeight
         self.foodsTableHeightContraint.constant = height
-        
-        
-//        print("\([1...3].reduce(0.0, combine: +))")
-        
-        //print(self.fetchRequestController.fetchedObjects?.map{ $0.nutrients.map{ $0.name } })
         
         self.setupNutrients()
     }
@@ -119,12 +114,6 @@ class AddFoodViewController: MainViewController, FoodsTableProtocol, UITableView
             caloriesRemainingLabel.text = "\(neededCalories - Int(sumArray(array: calories!, quantity: quantity!)))\(caloriesUnit!)"
             
             caloriesConsumedLabel.text = "\(Int(sumArray(array: calories!, quantity: quantity!)))\(caloriesUnit!)"
-            
-            let a = sumArray(array: calories!, quantity: quantity!)
-            
-            print(a)
-            
-            print(Int(a / Double(neededCalories) * 100.0))
             
             rdiLabel.text = "\(Int(sumArray(array: calories!, quantity: quantity!) / Double(neededCalories) * 100.0))%"
         }

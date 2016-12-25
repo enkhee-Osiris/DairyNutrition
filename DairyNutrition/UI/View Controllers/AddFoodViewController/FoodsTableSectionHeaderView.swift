@@ -15,7 +15,6 @@ class FoodsTableSectionHeader: UIView {
     @IBAction func addFoodButtonTapped(_ sender: UIButton) {
         self.delegate?.pushFoodSearchViewController()
     }
-
 }
 
 protocol FoodsTableProtocol {

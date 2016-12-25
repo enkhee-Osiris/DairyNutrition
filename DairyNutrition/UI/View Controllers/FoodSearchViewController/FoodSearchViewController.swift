@@ -120,7 +120,7 @@ class FoodSearchViewController: MainViewController, UITableViewDelegate, UITable
         // Specify the path to the countries list file.
         //let pathToFile = Bundle.main.path(forResource: "countries", ofType: "txt")
         
-        if let path = Bundle.main.path(forResource: "foods_min", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "foods", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 jsonObj = JSON(data: data)

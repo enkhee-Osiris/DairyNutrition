@@ -49,30 +49,30 @@ class DashboardTableViewController: UITableViewController {
     // MARK: - Custom Functions
     
     func setupCalories(){
-        persistentContainer.performBackgroundTask { backgroundContext in
-            let foods = backgroundContext.foods.filter{ $0.date == Shared.shared.selectedDate }
+        let foods = persistentContainer.viewContext.foods.filter{ $0.date == Shared.shared.selectedDate }
+        let exercises = persistentContainer.viewContext.exercises.filter{ $0.date == Shared.shared.selectedDate }
+        
+        if foods.count() != 0 {
+            let calories = foods.flatMap{ $0.nutrients.filter{ $0.name == "Energy" }.flatMap{ $0.value }}
+            let quantity = foods.flatMap{ $0.quantity }
+            let caloriesUnit = foods.flatMap{ $0.nutrients.filter{ $0.name == "Energy" }}[0].unit
             
-            print("setupCalories")
+            let caloriesConsumed = "\(Shared.shared.currentUser.calculateCalories() - Int(sumArray(array: calories, quantity: quantity))) \(caloriesUnit)"
+            let caloriesNeed = "\(Int(sumArray(array: calories, quantity: quantity))) \(caloriesUnit)"
             
-            if foods.count() != 0 {
-                let calories = foods.flatMap{ $0.nutrients.filter{ $0.name == "Energy" }.flatMap{ $0.value }}
-                let quantity = foods.flatMap{ $0.quantity }
-                let caloriesUnit = foods.flatMap{ $0.nutrients.filter{ $0.name == "Energy" }}[0].unit
-                
-                let caloriesConsumed = "\(Shared.shared.currentUser.calculateCalories() - Int(sumArray(array: calories, quantity: quantity)))\(caloriesUnit)"
-                let caloriesNeed = "\(Int(sumArray(array: calories, quantity: quantity)))\(caloriesUnit)"
-                
-                print(caloriesConsumed + " " + caloriesNeed)
-                
-                self.setLabel(caloriesConsumed: caloriesConsumed, caloriesNeed: caloriesNeed)
-            } else {
-                
-                print("qweqwe")
-                self.setLabel(caloriesConsumed: "\(Shared.shared.currentUser.calculateCalories())", caloriesNeed: "0")
-            }
+            self.setLabel(caloriesConsumed: caloriesConsumed, caloriesNeed: caloriesNeed)
+        } else {
+            self.setLabel(caloriesConsumed: "\(Shared.shared.currentUser.calculateCalories()) kcal", caloriesNeed: "0 kcal")
+        }
+        
+        if exercises.count() != 0 {
+            let calories = Int(exercises.flatMap{ $0.value }.reduce(0, +))
+            self.caloriesBurnedLabel.text = "\(calories)"
+        } else {
+            self.caloriesBurnedLabel.text = "0"
         }
     
-        self.currentWeightLabel.text = "\(Shared.shared.currentUser.weight!)"
+        self.currentWeightLabel.text = "\(Shared.shared.currentUser.weight!) kg"
     }
     
     func setLabel(caloriesConsumed: String, caloriesNeed: String){

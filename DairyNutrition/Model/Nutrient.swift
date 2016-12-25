@@ -27,7 +27,7 @@ class Nutrient: NSObject, NSCoding {
     {
         self.name = name
         self.unit = unit
-        self.value = value
+        self.value = value == "--" ? "0" : value
         self.gm = gm
     }
     

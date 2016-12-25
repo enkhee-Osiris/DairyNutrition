@@ -73,13 +73,13 @@ class FoodDetailsViewController: MainViewController, UIPickerViewDelegate, UIPic
             
             switch (nutrient.name)! {
             case "Protein":
-                foodProteinLabel.text = "\(Double(nutrient.value!)! * Double(count))"
+                foodProteinLabel.text = "\(Double(nutrient.value!)! * Double(count)) \(nutrient.unit!)"
             case "Total lipid (fat)":
-                foodFatLabel.text = "\(Double(nutrient.value!)! * Double(count))"
+                foodFatLabel.text = "\(Double(nutrient.value!)! * Double(count)) \(nutrient.unit!)"
             case "Carbohydrate, by difference":
-                foodCarbLabel.text = "\(Double(nutrient.value!)! * Double(count))"
+                foodCarbLabel.text = "\(Double(nutrient.value!)! * Double(count)) \(nutrient.unit!)"
             default:
-                foodCaloriesLabel.text = "\(Int(nutrient.value!)! * count)"
+                foodCaloriesLabel.text = "\(Int(nutrient.value!)! * count) \(nutrient.unit!)"
             }
         }
     }
@@ -122,7 +122,9 @@ class FoodDetailsViewController: MainViewController, UIPickerViewDelegate, UIPic
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         saveFood(self.food!)
         
-        super.showAlert(title: "Food Added", text: "Food has been successfully added")
+        super.showAlert(title: "Food Added", text: "Food has been successfully added", handler: { (_) -> Void in
+            super.presentVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "BaseViewController"))!)
+        })
     }
 }
 

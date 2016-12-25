@@ -25,6 +25,11 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        super.addNotificationObserver(Notification.Name.pushFoodDairy.rawValue, selector: #selector(self.pushFoodDairy))
+        super.addNotificationObserver(Notification.Name.pushExerciseDairy.rawValue, selector: #selector(self.pushExerciseDairy))
+        super.addNotificationObserver(Notification.Name.pushWeightTracker.rawValue, selector: #selector(self.pushWeightTracker))
+        super.addNotificationObserver(Notification.Name.pushSettings.rawValue, selector: #selector(self.pushSettings))
+        
         self.setupCalendar()
         
         let menuButton = UIButton(type: .custom)
@@ -42,6 +47,26 @@ class DashboardViewController: MainViewController, FSCalendarDataSource, FSCalen
     }
     
     // MARK: Custom Function
+    
+    func pushFoodDairy() {
+        self.closeMenu()
+        self.pushAddFoodViewController()
+    }
+    
+    func pushExerciseDairy() {
+        self.closeMenu()
+        self.pushAddExerciseViewController()
+    }
+
+    func pushWeightTracker() {
+        self.closeMenu()
+        //super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "AddExerciseViewController"))!)
+    }
+    
+    func pushSettings() {
+        self.closeMenu()
+        //super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "AddExerciseViewController"))!)
+    }
     
     func setupCalendar() {
         self.calendar.scope = .week

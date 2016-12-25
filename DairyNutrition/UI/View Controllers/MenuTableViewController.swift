@@ -62,23 +62,16 @@ class MenuTableViewController: UITableViewController {
                 drawerController.setDrawerState(.closed, animated: true)
             }
         case 2:
-            // Food dairy
-            //super.pushVC((UIStoryboard.mainStoryboard?.instantiateVC(AddFoodViewController.self))!)
-//            if let drawerController = parent as? KYDrawerController {
-//                drawerController.mainViewController.pushVC((UIStoryboard.mainStoryboard?.instantiateVC(AddFoodViewController.self))!)
-//            }
-            super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "AddFoodViewController"))!)
+            NotificationCenter.default.post(name: Notification.Name.pushFoodDairy, object: nil)
         case 3:
             // Exercise dairy
-//            super.pushVC((UIStoryboard.mainStoryboard?.instantiateVC(AddExerciseViewController.self))!)
-            super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "AddExerciseViewController"))!)
+            NotificationCenter.default.post(name: Notification.Name.pushExerciseDairy, object: nil)
         case 4:
             // weight Tracker
-            print("Weight tracker")
-            
+            NotificationCenter.default.post(name: Notification.Name.pushWeightTracker, object: nil)
         case 5:
             // Settings
-            print("settings")
+            NotificationCenter.default.post(name: Notification.Name.pushSettings, object: nil)
         default:
             Defaults[.loggedIn] = false
             super.presentVC((UIStoryboard.mainStoryboard?.instantiateVC(WelcomeViewController.self))!)

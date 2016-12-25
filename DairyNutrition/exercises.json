@@ -1,0 +1,242 @@
+[
+	{
+		"name": "Racquetball (recreational)",
+		"value": 0.07
+	},
+	{
+		"name": "Cycling (light, <10 mph)",
+		"value": 0.12
+	},	
+	{
+		"name": "Cycling (light-moderate, 10-12 mph)",
+		"value": 0.10
+	},		
+	{
+		"name": "Cycling (moderate, 12.1-14 mph)",
+		"value": 0.14
+	},	
+	{
+		"name": "Cycling (hard, 14.1-16 mph)",
+		"value": 0.18
+	},
+	{
+		"name": "Cycling (v. hard, 16.1-19 mph)",
+		"value": 0.21
+	},
+	{
+		"name": "Cycling (stationary, 50W)",
+		"value": 0.05
+	},
+	{
+		"name": "Cycling (stationary, 100W)",
+		"value": 0.09
+	},
+	{
+		"name": "Cycling (stationary, 150W)",
+		"value": 0.12
+	},
+	{
+		"name": "Cycling (stationary, 200W)",
+		"value": 0.18
+	},
+	{
+		"name": "Cycling (stationary, 250W)",
+		"value": 0.22
+	},
+	{
+        "name": "Kayaking (leisure)",
+        "value": 0.04
+	},
+	{
+		"name": "Golf (walking + bag)",
+		"value": 0.09
+	},
+	{
+		"name": "Running (5 mph, 12 min/mile)",
+		"value": 0.12
+	},
+	{
+		"name": "Running 5.5 mph (11 min/mile)",
+		"value": 0.14
+	},
+	{
+		"name": "Running (6 mph, 10 min/mile)",
+		"value": 0.16
+	},
+	{
+		"name": "Running (6.6 mph, 9 min/mile)",
+		"value": 0.19
+	},
+	{
+		"name": "Running (7.5 mph 8 min/mile)",
+		"value": 0.22
+	},
+	{
+		"name": "Dancing (general)",
+		"value": 0.08
+	},
+	{
+		"name": "Running (8.6 mph, 7 min/mile)",
+		"value": 0.24
+	},
+	{
+		"name": "Running (10 mph, 6 min/mile)",
+		"value": 0.28
+	},
+	{
+		"name": "Calisthenics (push-ups, etc.)",
+		"value": 0.08
+	},
+	{
+		"name": "Chopping Wood",
+		"value": 0.09
+	},
+	{
+		"name": "Circuit Training",
+		"value": 0.14
+	},
+	{
+		"name": "Mowing Lawn (walking, power)",
+		"value": 0.08
+	},
+	{
+		"name": "Weight Training (light)",
+		"value": 0.05
+	},
+	{
+		"name": "Raking Leaves",
+		"value": 0.07
+	},
+	{
+		"name": "Weight Training (hard)",
+		"value": 0.10
+	},
+	{
+		"name": "Trimming (manual)",
+		"value": 0.07
+	},
+	{
+		"name": "Rowing (50W)",
+		"value": 0.06
+	},
+	{
+		"name": "Weeding/Gardening",
+		"value": 0.07
+	},
+	{
+		"name": "Rowing (100W)",
+		"value": 0.12
+	},
+	{
+		"name": "Sitting Activities (very light)",
+		"value": 0.03
+	},
+	{
+		"name": "Rowing (150W)",
+		"value": 0.15
+	},
+	{
+		"name": "Standing (very light)",
+		"value": 0.04
+	},
+	{
+		"name": "Rowing (200W)",
+		"value": 0.21
+	},
+	{
+		"name": "Walking (3 mph 20 min/mile)",
+		"value": 0.06
+	},
+	{
+		"name": "Stretching/Yoga",
+		"value": 0.06
+	},
+	{
+		"name": "Walking (3.5 mph, 17 min/mile)",
+		"value": 0.07
+	},
+	{
+		"name": "Aerobics (low impact)",
+		"value": 0.09
+	},
+	{
+		"name": "Walking (4 mph 15 min/mile)",
+		"value": 0.08
+	},
+	{
+		"name": "Aerobics (high impact)",
+		"value": 0.12
+	},
+	{
+		"name": "Sweeping",
+		"value": 0.05
+	},
+	{
+		"name": "Volleyball (recreational)",
+		"value": 0.05
+	},
+	{
+		"name": "Washing Car",
+		"value": 0.07
+	},
+	{
+		"name": "Bathing/Dressing",
+		"value": 0.04
+	},
+	{
+		"name": "House Cleaning",
+		"value": 0.06
+	},
+	{
+		"name": "Sexual Activity (kissing, hugs)",
+		"value": 0.02
+	},
+	{
+		"name": "Washing Dishes/Ironing",
+		"value": 0.04
+	},
+	{
+		"name": "Sexual Activity (active)",
+		"value": 0.03
+	},
+	{
+		"name": "Cooking Food",
+		"value": 0.04
+	},
+	{
+		"name": "Swimming (light)",
+		"value": 0.10
+	},
+	{
+		"name": "Carrying Groceries (light)",
+		"value": 0.07
+	},
+	{
+		"name": "Swimming (moderate)",
+		"value": 0.14
+	},
+	{
+		"name": "Laundry Folding/Making Bed",
+		"value": 0.04
+	},
+	{
+		"name": "Sleeping",
+		"value": 0.02
+	},
+	{
+		"name": "Playing with Kids (sitting)",
+		"value": 0.04
+	},
+	{
+		"name": "Child Care (sitting)",
+		"value": 0.05
+	},
+	{
+		"name": "Playing with Kids (standing)",
+		"value": 0.05
+	},
+	{
+		"name": "Child Care (standing)",
+		"value": 0.06
+	}
+]

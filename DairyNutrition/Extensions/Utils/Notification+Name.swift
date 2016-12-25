@@ -12,4 +12,9 @@ extension Notification.Name {
     static let signInNextButtonWillEnable = Notification.Name("signInNextButtonWillEnable")
     static let signInNextButtonWillDisable = Notification.Name("signInNextButtonWillDisable")
     static let noNetworkConnection = Notification.Name("noNetworkConnection")
+    
+    static let pushFoodDairy = Notification.Name("pushFoodDairy")
+    static let pushExerciseDairy = Notification.Name("pushExerciseDairy")
+    static let pushWeightTracker = Notification.Name("pushWeightTracker")
+    static let pushSettings = Notification.Name("pushSettings")
 }

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CoreExercise" representedClassName="CoreExercise" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="CoreFood" representedClassName="CoreFood" syncable="YES">
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,6 +21,7 @@
         <relationship name="food" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoreFood" inverseName="nutrients" inverseEntity="CoreFood" syncable="YES"/>
     </entity>
     <elements>
+        <element name="CoreExercise" positionX="99" positionY="189" width="128" height="105"/>
         <element name="CoreFood" positionX="223" positionY="27" width="128" height="118"/>
         <element name="CoreNutrient" positionX="-20" positionY="27" width="128" height="118"/>
     </elements>

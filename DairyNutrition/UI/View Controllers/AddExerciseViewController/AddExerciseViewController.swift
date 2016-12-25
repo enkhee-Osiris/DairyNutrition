@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import CoreData
+import AlecrimCoreData
 
-class AddExerciseViewController: MainViewController, ExercisesTableProtocol{
+class AddExerciseViewController: MainViewController, ExercisesTableProtocol, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: Properties
     
     @IBOutlet weak var caloriesBurnedLabel: UILabel!
     
     @IBOutlet weak var exercisesTable: UITableView!
+    
+    @IBOutlet weak var exercisesTableHeightConstraint: NSLayoutConstraint!
+    
+    fileprivate private(set) lazy var fetchRequestController: FetchRequestController<CoreExercise> = {
+        let query = persistentContainer.viewContext.exercises.filter{ $0.date == Shared.shared.selectedDate }.orderBy{ $0.name }
+        
+        print("\(persistentContainer.viewContext.exercises.orderBy{ $0.date }.map{ $0.date })")
+        
+        return query.toFetchRequestController()
+    }()
     
     // MARK: View Life Cycle
     
@@ -23,7 +35,29 @@ class AddExerciseViewController: MainViewController, ExercisesTableProtocol{
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Add Exercise"
+        
+        self.fetchRequestController.bind(to: self.exercisesTable)
         self.setupExercisesTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let rowHeight = CGFloat(44)
+        let headerHeight = exercisesTable.sectionHeaderHeight
+        let count = self.fetchRequestController.numberOfObjects(inSection: 0) == 0 ? 1 : self.fetchRequestController.numberOfObjects(inSection: 0)
+        
+        let height = (CGFloat(count) * rowHeight) + headerHeight
+        self.exercisesTableHeightConstraint.constant = height
+        
+        if((self.fetchRequestController.fetchedObjects?.count)! > 0) {
+            
+            let calories = self.fetchRequestController.fetchedObjects?.flatMap{ $0.value }
+            
+            let sum = Int((calories?.reduce(0, +))!)
+            
+            self.caloriesBurnedLabel.text = "\(sum)"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +76,31 @@ class AddExerciseViewController: MainViewController, ExercisesTableProtocol{
     
     func pushExercisesSearchViewController() {
         print("push exercise selection")
-        //super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "ExerciseAdd"))!)
+        super.pushVC((UIStoryboard.mainStoryboard?.instantiateViewController(withIdentifier: "ExerciseSearchViewController"))!)
     }
 }
+
+// MARK: - UITableViewDelegate
+
+extension AddExerciseViewController {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return self.fetchRequestController.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.fetchRequestController.numberOfObjects(inSection: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = exercisesTable.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
+        
+        let exercise = self.fetchRequestController.object(at: indexPath)
+        
+        cell.textLabel!.text = exercise.name
+        let calories = exercise.value
+        cell.detailTextLabel!.text = "\(calories)"
+        
+        return cell
+    }
+}
+
