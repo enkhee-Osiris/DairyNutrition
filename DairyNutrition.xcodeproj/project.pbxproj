@@ -495,7 +495,6 @@
 				TargetAttributes = {
 					40CCDF341DBBBCFB00D00981 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = FEB8F3NBZG;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -792,7 +791,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = FEB8F3NBZG;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = DairyNutrition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -813,7 +812,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = FEB8F3NBZG;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = DairyNutrition/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
