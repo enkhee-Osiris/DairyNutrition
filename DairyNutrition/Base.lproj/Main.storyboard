@@ -1327,11 +1327,11 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodCell" textLabel="fTg-Gj-yEF" detailTextLabel="IW7-1h-xs4" style="IBUITableViewCellStyleValue1" id="RdR-Ta-CeA">
                                         <rect key="frame" x="0.0" y="44" width="355" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RdR-Ta-CeA" id="9ep-ww-xjy">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" tableViewCell="RdR-Ta-CeA" id="9ep-ww-xjy">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fTg-Gj-yEF">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fTg-Gj-yEF">
                                                     <rect key="frame" x="15" y="11" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1761,7 +1761,7 @@
                                 </connections>
                             </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a88-VR-tLv">
-                                <rect key="frame" x="16" y="225" width="150" height="112"/>
+                                <rect key="frame" x="16" y="225" width="250" height="112"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wsf-ui-4g7">
                                         <rect key="frame" x="0.0" y="0.0" width="91.5" height="20.5"/>
@@ -1833,7 +1833,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="GTI-40-Bkl"/>
+                                    <constraint firstAttribute="width" constant="250" id="GTI-40-Bkl"/>
                                     <constraint firstAttribute="height" constant="112" id="VXL-VT-3Rb"/>
                                 </constraints>
                             </stackView>
